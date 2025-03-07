@@ -1,0 +1,6 @@
+@FSEBACKEND_HostAddress = http://localhost:5128
+
+GET {{FSEBACKEND_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
