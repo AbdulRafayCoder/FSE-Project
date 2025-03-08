@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FSEBACKEND")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef8da505076b590e0bf7fbe80748bd9cb43eba2f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+628a1c7faf4bc3b1ebad68c0bf9fa1bfde634675")]
 [assembly: System.Reflection.AssemblyProductAttribute("FSEBACKEND")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FSEBACKEND")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
