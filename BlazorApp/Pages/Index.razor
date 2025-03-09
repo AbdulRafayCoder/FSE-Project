@@ -1,0 +1,138 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .outer-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background-color: white;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .index-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        background: radial-gradient(circle, #1a1a1a, #333);
+        background-size: 56.57px 56.57px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .side-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 450px;
+        height: 80vh;
+        background-color: black;
+        margin: 0 50px;
+        border-radius: 10px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .side-container:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .word-container {
+        background-color: white;
+        color: black;
+        padding: 20px;
+        border-radius: 5px;
+        width: 200px;
+        font-size: 1.5em;
+        text-align: center;
+        margin: 10px 0;
+        transition: transform 0.3s, box-shadow 0.3s;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .word-container:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .welcome-box {
+        background-color: white;
+        padding: 50px;
+        text-align: center;
+        border-radius: 10px;
+        cursor: pointer;
+        max-width: 600px;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .welcome-box:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .welcome-box h1 {
+        margin: 0;
+        font-size: 2.5em;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+    }
+
+    .welcome-box p {
+        margin: 10px 0 0;
+        font-size: 1.2em;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+    }
+
+    .welcome-box img {
+        max-width: 100%;
+        height: 300px;
+        margin-bottom: 30px;
+    }
+</style>
+
+<div class="outer-container">
+    <div class="index-container">
+        <div class="side-container">
+            <div class="word-container">Read</div>
+            <div class="word-container">Learn</div>
+            <div class="word-container">Grow</div>
+        </div>
+        <div class="welcome-box" @onclick="NavigateToLogin">
+            <img src="images/logo.png" alt="Logo" />
+            <h1>BookTech Digital Library</h1>
+            <p>Your digital gateway to a world of knowledge</p>
+        </div>
+        <div class="side-container">
+            <div class="word-container">Explore</div>
+            <div class="word-container">Discover</div>
+            <div class="word-container">Enjoy</div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private void NavigateToLogin()
+    {
+        NavigationManager.NavigateTo("/login");
+    }
+}

@@ -16,8 +16,6 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
-
 app.MapPost("/login", async (LoginRequest login, ApplicationDbContext db) =>
 {
     var user = await db.Users.SingleOrDefaultAsync(u => u.Email == login.Email && u.Password == login.Password);
@@ -73,6 +71,18 @@ record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
-public record LoginRequest(string Email, string Password);
+public record LoginRequest
+{
+    public required string Email { get; init; }
+    public required string Password { get; init; }
+
+    public LoginRequest() { }
+
+    public LoginRequest(string email, string password)
+    {
+        Email = email;
+        Password = password;
+    }
+}
 public record AddUserRequest(string Email, string Password);
 public record AddBookRequest(int BookId, string BookName, string WriteName, string PublishDate);

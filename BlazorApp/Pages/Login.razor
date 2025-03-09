@@ -1,0 +1,200 @@
+@page "/login"
+@using FSEBACKEND.Models
+@using System.Net.Http
+@using System.Net.Http.Json
+@using Microsoft.AspNetCore.Components
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<style>
+    .login-container {
+        display: flex;
+        height: 100vh;
+        background: white;
+        background-size: 56.57px 56.57px;
+        position: relative;
+    }
+
+    .back-button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px 20px;
+        font-size: 1.5em;
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        border: none;
+        border-bottom-right-radius: 20px;
+        transition: background-color 0.3s;
+    }
+
+    .back-button:hover {
+        background-color: #555;
+    }
+
+    .white-side {
+        flex: 2;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .black-side {
+        flex: 2;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        border-top-left-radius: 40px;
+        border-bottom-left-radius: 40px;
+        height: 100%;
+    }
+
+    .black-side img {
+        max-width: 100%;
+        height: 300px;
+        margin-bottom: 20px;
+    }
+
+    .black-side h1 {
+        color: white;
+        font-size: 3em;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .login-form {
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .login-form h2 {
+        margin-bottom: 20px;
+        font-family: 'Arial', sans-serif;
+        font-size: 5em;
+        font-weight: bold;
+    }
+
+    .black-container {
+        background-color: black;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .login-form input {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        font-size: 1em;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .login-form button {
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        width: 100%;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .login-form button:hover {
+        background-color: #555;
+    }
+
+    .error-message {
+        color: red;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .black-container-under-heading {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 10px;
+        font-size: 0.7em;
+        font-weight: bold;
+    }
+</style>
+
+<div class="login-container">
+    <button class="back-button" @onclick="NavigateToIndex">Home</button>
+    <div class="white-side">
+        <div class="login-form">
+            <h2>Login</h2>
+            
+            <div class="black-container">
+                <input @bind="email" placeholder="Email" />
+                <input @bind="password" type="password" placeholder="Password" />
+                <button @onclick="HandleLogin">SIGN IN</button>
+                @if (!string.IsNullOrEmpty(errorMessage))
+                {
+                    <p class="error-message">@errorMessage</p>
+                }
+            </div>
+            <div class="black-container-under-heading">
+                <p>In case user account has not been made yet contact admin services</p>
+            </div>
+        </div>
+    </div>
+    <div class="black-side">
+        <img src="images/logo.png" alt="Logo" />
+        <h1>BookTech Digital Library</h1>
+    </div>
+</div>
+
+@code {
+    private string email = string.Empty;
+    private string password = string.Empty;
+    private string? errorMessage;
+
+    private async Task HandleLogin()
+    {
+        var loginRequest = new LoginRequest
+        {
+            Email = email,
+            Password = password
+        };
+
+        var response = await Http.PostAsJsonAsync("http://localhost:5000/login", loginRequest);
+        var result = await response.Content.ReadFromJsonAsync<LoginResponse>();
+
+        if (result.Status)
+        {
+            // Redirect to the main application page
+            NavigationManager.NavigateTo("/");
+        }
+        else
+        {
+            errorMessage = "Invalid credentials. Please try again.";
+        }
+    }
+
+    private void NavigateToIndex()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+
+    public class LoginResponse
+    {
+        public bool Status { get; set; }
+        public string Email { get; set; }
+        public string Role { get; set; }
+    }
+}
