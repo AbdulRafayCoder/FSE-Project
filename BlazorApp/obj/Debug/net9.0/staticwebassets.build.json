@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "r+gZ0B2GGOdMsZI+jMT2ZuMwuNVa72Lo0V3GjiubM3U=",
+  "Hash": "OFwJdTNndoOv4GFt477bOw7vzvDLNMpjPnyx+ioU3w4=",
   "Source": "BlazorApp",
   "BasePath": "_content/BlazorApp",
   "Mode": "Default",
@@ -470,12 +470,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\logo.png",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\images\\logo.png",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
-      "RelativePath": "logo#[.{fingerprint}]?.png",
+      "RelativePath": "images/logo#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -484,11 +484,11 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "uixfq67qh9",
-      "Integrity": "ioYZGdZuIGS05omWqPoEtQwbezZNMfHCJOBCl1DmgSw=",
+      "Fingerprint": "j662ykvxex",
+      "Integrity": "NRKn07FqVPyK1k8dOuKhmHPFHI1wJcfp9/E7fAvYGs0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\logo.png"
+      "OriginalItemSpec": "wwwroot\\images\\logo.png"
     }
   ],
   "Endpoints": [
@@ -3287,8 +3287,8 @@
       ]
     },
     {
-      "Route": "logo.png",
-      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\logo.png",
+      "Route": "images/logo.j662ykvxex.png",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\images\\logo.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3297,7 +3297,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "28418"
+          "Value": "7999"
         },
         {
           "Name": "Content-Type",
@@ -3305,48 +3305,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ioYZGdZuIGS05omWqPoEtQwbezZNMfHCJOBCl1DmgSw=\""
+          "Value": "\"NRKn07FqVPyK1k8dOuKhmHPFHI1wJcfp9/E7fAvYGs0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 09 Mar 2025 13:02:01 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ioYZGdZuIGS05omWqPoEtQwbezZNMfHCJOBCl1DmgSw="
-        }
-      ]
-    },
-    {
-      "Route": "logo.uixfq67qh9.png",
-      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\logo.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "28418"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ioYZGdZuIGS05omWqPoEtQwbezZNMfHCJOBCl1DmgSw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 09 Mar 2025 13:02:01 GMT"
+          "Value": "Sun, 09 Mar 2025 14:37:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3356,15 +3319,52 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "uixfq67qh9"
+          "Value": "j662ykvxex"
         },
         {
           "Name": "label",
-          "Value": "logo.png"
+          "Value": "images/logo.png"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ioYZGdZuIGS05omWqPoEtQwbezZNMfHCJOBCl1DmgSw="
+          "Value": "sha256-NRKn07FqVPyK1k8dOuKhmHPFHI1wJcfp9/E7fAvYGs0="
+        }
+      ]
+    },
+    {
+      "Route": "images/logo.png",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\images\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7999"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NRKn07FqVPyK1k8dOuKhmHPFHI1wJcfp9/E7fAvYGs0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 09 Mar 2025 14:37:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NRKn07FqVPyK1k8dOuKhmHPFHI1wJcfp9/E7fAvYGs0="
         }
       ]
     }

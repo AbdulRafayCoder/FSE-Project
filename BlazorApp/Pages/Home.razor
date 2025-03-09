@@ -1,0 +1,152 @@
+@page "/home"
+@using FSEBACKEND.Models
+@using Microsoft.AspNetCore.Components
+@inject NavigationManager NavigationManager
+
+<style>
+    .container {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        background-color: #f0f0f0; /* Light gray background */
+    }
+
+    .sidebar {
+        width: 250px;
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        position: fixed;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+
+    .sidebar img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .sidebar a {
+        color: black;
+        text-decoration: none;
+        margin: 20px 0;
+        font-size: 1.2em;
+        display: block;
+        text-align: center;
+        padding: 10px;
+        background-color: white;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    .sidebar a:hover {
+        text-decoration: underline;
+    }
+
+    .sidebar .logout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin-top: auto;
+        text-align: center;
+        padding: 10px;
+        background-color: white;
+        color: black;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    .top-bar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: white;
+        width: calc(100% - 250px);
+        margin-left: 250px;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        height: 50px; /* Adjust height as needed */
+    }
+
+    .top-bar .user-info {
+        display: flex;
+        align-items: center;
+    }
+
+    .top-bar .user-info img {
+        margin-right: 10px;
+    }
+
+    .main-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        background-color: #f5f5f5;
+        text-align: center;
+        font-size: 2em;
+        width: calc(100% - 250px);
+        margin-left: 250px;
+        margin-top: 50px; /* Adjust for top bar height */
+    }
+
+    .main-content .welcome-message {
+        font-size: 3em;
+        margin-bottom: 20px;
+    }
+
+    .main-content .user-role {
+        font-size: 1.5em;
+        color: gray;
+    }
+</style>
+
+<div class="container">
+    <div class="sidebar">
+        <div>
+            <img src="images/logo.png" alt="Logo" />
+            <a href="#">Catalog</a>
+            <a href="#">Requests</a>
+            <a href="/users">Users</a>
+            <a href="#">Challan</a>
+            <a href="#">Reviews</a>
+        </div>
+        <div class="logout" @onclick="Logout">
+            <span>Log Out</span>
+        </div>
+    </div>
+    <div class="top-bar">
+        <div class="user-info">
+            <div>
+                <div>@userEmail</div>
+                <div>@userRole</div>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div>
+            <div class="welcome-message">Welcome!</div>
+            <div class="user-role">@userRole</div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string userName = "Abdul-Rafay";
+    private string userRole = "Admin";
+    private string userEmail = "test@example.com";
+
+    private void Logout()
+    {
+        NavigationManager.NavigateTo("/login");
+    }
+}
