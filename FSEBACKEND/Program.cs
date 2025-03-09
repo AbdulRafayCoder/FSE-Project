@@ -36,7 +36,7 @@ app.MapPost("/adduser", async (AddUserRequest newUser, ApplicationDbContext db) 
         return Results.BadRequest("Email and password are required.");
     }
 
-    var user = new User(newUser.Email, newUser.Password, "Student");
+    var user = new User(newUser.Email, newUser.Password, "student");
     db.Users.Add(user);
     await db.SaveChangesAsync();
 

@@ -1,7 +1,10 @@
 @page "/users"
 @using FSEBACKEND.Models
 @using Microsoft.AspNetCore.Components
+@using System.Net.Http.Json
 @inject NavigationManager NavigationManager
+@inject HttpClient Http
+@inject IJSRuntime JSRuntime
 
 <style>
     .container {
@@ -88,25 +91,39 @@
 
     .main-content {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         flex-grow: 1;
         background-color: #f5f5f5;
         text-align: center;
-        font-size: 2em;
         width: calc(100% - 250px);
         margin-left: 250px;
         margin-top: 50px; /* Adjust for top bar height */
+        gap: 20px;
     }
 
-    .main-content .welcome-message {
+    .main-content h1 {
         font-size: 3em;
         margin-bottom: 20px;
     }
 
-    .main-content .user-role {
-        font-size: 1.5em;
-        color: gray;
+    .main-content input {
+        padding: 10px;
+        font-size: 1em;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 300px;
+    }
+
+    .main-content button {
+        padding: 10px 20px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
     }
 </style>
 
@@ -133,10 +150,10 @@
         </div>
     </div>
     <div class="main-content">
-        <div>
-            <div class="welcome-message">Welcome!</div>
-            <div class="user-role">@userRole</div>
-        </div>
+        <h1>Add user</h1>
+        <input placeholder="Email" @bind="newUserEmail" />
+        <input type="password" placeholder="Password" @bind="newUserPassword" />
+        <button @onclick="AddUser">Add</button>
     </div>
 </div>
 
@@ -145,8 +162,37 @@
     private string userRole = "Admin";
     private string userEmail = "test@example.com";
 
+    private string newUserEmail = "";
+    private string newUserPassword = "";
+    
     private void Logout()
     {
         NavigationManager.NavigateTo("/login");
     }
+
+    private async Task AddUser()
+    {
+        var addUserRequest = new AddUserRequest(newUserEmail, newUserPassword);
+        var response = await Http.PostAsJsonAsync("http://localhost:5000/adduser", addUserRequest);
+        if (response.IsSuccessStatusCode)
+        {
+            var result = await response.Content.ReadFromJsonAsync<AddUserResponse>();
+            if (result != null && result.Status == "User added")
+            {
+                await JSRuntime.InvokeVoidAsync("alert", "User added successfully!");
+            }
+            else
+            {
+                await JSRuntime.InvokeVoidAsync("alert", "Failed to add user.");
+            }
+        }
+        else
+        {
+            await JSRuntime.InvokeVoidAsync("alert", "Please Write complete Email and password");
+        }
+    }
+
+    public record AddUserRequest(string Email, string Password);
+    public record AddUserResponse(string Status, User? User);
+    public record User(string Email, string Password, string Role);
 }
