@@ -285,3 +285,4 @@ C:\Users\rafwa\Desktop\Fse-Assignment\FSEBACKEND\obj\Debug\net9.0\refint\FSEBACK
 C:\Users\rafwa\Desktop\Fse-Assignment\FSEBACKEND\obj\Debug\net9.0\FSEBACKEND.pdb
 C:\Users\rafwa\Desktop\Fse-Assignment\FSEBACKEND\obj\Debug\net9.0\FSEBACKEND.genruntimeconfig.cache
 C:\Users\rafwa\Desktop\Fse-Assignment\FSEBACKEND\obj\Debug\net9.0\ref\FSEBACKEND.dll
+C:\Users\rafwa\Desktop\Fse-Assignment\FSEBACKEND\obj\Debug\net9.0\FSEBACKEND.sourcelink.json

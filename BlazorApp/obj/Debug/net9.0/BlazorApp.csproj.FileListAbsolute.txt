@@ -152,13 +152,9 @@ C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\BlazorApp.MvcAp
 C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\BlazorApp.RazorAssemblyInfo.cache
 C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\BlazorApp.RazorAssemblyInfo.cs
 C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\scopedcss\bundle\BlazorApp.styles.css
-C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\compressed\3kv8flzgw3-etnb7xlipe.gz
 C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\compressed\doj1h60rcv-kao5znno1s.gz
 C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\compressed\g62xpx5w3y-cmapd0fi15.gz
 C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\compressed\lqwiegl96m-wk8x8xm0ah.gz
-C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\compressed\dwck7ctys4-sjnzgf7e1h.gz
-C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\compressed\bj8hnby9lx-psxpu4y82n.gz
-C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\compressed\r1im0su65m-jcs7p5hiro.gz
 C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\compressed\7loymvhq1e-61n19gt1b8.gz
 C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\staticwebassets.development.json
@@ -175,3 +171,8 @@ C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\refint\BlazorAp
 C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\BlazorApp.pdb
 C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\BlazorApp.genruntimeconfig.cache
 C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\ref\BlazorApp.dll
+C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\BlazorApp.sourcelink.json
+C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\compressed\3kv8flzgw3-o2wlpouf80.gz
+C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\compressed\dwck7ctys4-10uzszoped.gz
+C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\compressed\bj8hnby9lx-l5877nzu3a.gz
+C:\Users\rafwa\Desktop\Fse-Assignment\BlazorApp\obj\Debug\net9.0\compressed\r1im0su65m-3avojwphdg.gz

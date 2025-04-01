@@ -12,5 +12,7 @@ namespace FSEBACKEND.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<Book> Books { get; set; }
+        public DbSet<Request> Requests { get; set; }
+        public DbSet<Lend> Lends { get; set; }
     }
 }

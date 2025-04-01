@@ -66,11 +66,183 @@ app.MapGet("/books", async (ApplicationDbContext db) =>
     return Results.Ok(books);
 });
 
+
+app.MapPost("/addrequest", async (Request newRequest, ApplicationDbContext db) =>
+{
+    if (newRequest.BookId <= 0 || string.IsNullOrWhiteSpace(newRequest.Email))
+    {
+        return Results.BadRequest("BookId (greater than 0) and Email are required.");
+    }
+
+    db.Requests.Add(newRequest);
+    await db.SaveChangesAsync();
+    return Results.Ok(new { Status = "Request added", Request = newRequest });
+});
+
+app.MapGet("/requests", async (ApplicationDbContext db) =>
+{
+    var requests = await db.Requests
+        .GroupJoin(
+            db.Books,
+            request => request.BookId,
+            book => book.Id, 
+            (request, books) => new { request, books })
+        .SelectMany(
+            temp => temp.books.DefaultIfEmpty(),
+            (temp, book) => new { temp.request, book })
+        .GroupJoin(
+            db.Users,
+            temp => temp.request.Email,
+            user => user.Email,
+            (temp, users) => new { temp.request, temp.book, users })
+        .SelectMany(
+            temp => temp.users.DefaultIfEmpty(),
+            (temp, user) => new
+            {
+                RequestId = temp.request.Id,
+                UserEmail = user != null ? user.Email : temp.request.Email,
+                BookId = temp.book != null ? temp.book.Id : temp.request.BookId, // ✅ Fix field name
+                BookName = temp.book != null ? temp.book.BookName : "Unknown Book",
+                Accepted = temp.request.Accepted
+            })
+        .Distinct()
+        .ToListAsync();
+
+    return Results.Ok(requests);
+});
+
+app.MapGet("/requests/{id}", async (int id, ApplicationDbContext db) =>
+{
+    var request = await db.Requests
+        .GroupJoin(
+            db.Books,
+            req => req.BookId,
+            book => book.Id,
+            (req, books) => new { req, books })
+        .SelectMany(
+            temp => temp.books.DefaultIfEmpty(),
+            (temp, book) => new { temp.req, book })
+        .GroupJoin(
+            db.Users,
+            temp => temp.req.Email,
+            user => user.Email,
+            (temp, users) => new { temp.req, temp.book, users })
+        .SelectMany(
+            temp => temp.users.DefaultIfEmpty(),
+            (temp, user) => new
+            {
+                RequestId = temp.req.Id,
+                UserEmail = user != null ? user.Email : temp.req.Email,
+                BookId = temp.book != null ? temp.book.Id : temp.req.BookId,
+                BookName = temp.book != null ? temp.book.BookName : "Unknown Book",
+                Accepted = temp.req.Accepted
+            })
+        .Where(x => x.RequestId == id)
+        .FirstOrDefaultAsync();
+
+    return request != null ? Results.Ok(request) : Results.NotFound("Request not found.");
+});
+
+
+app.MapPut("/requests/{id}", async (int id, Request updatedRequest, ApplicationDbContext db) =>
+{
+    var request = await db.Requests.FindAsync(id);
+    if (request is null) return Results.NotFound("Request not found.");
+    request.Accepted = true;
+    var lend = new Lend
+    {
+        RequestId = request.Id,
+        StartDate = DateTime.UtcNow,  
+        EndDate = DateTime.UtcNow.AddDays(14)  
+    };
+    db.Lends.Add(lend);
+    await db.SaveChangesAsync();
+
+    return Results.Ok(new { Status = "Request updated and Lend added", Request = request, Lend = lend });
+});
+
+app.MapGet("/requests/unaccepted/{email}", async (string email, ApplicationDbContext db) =>
+{
+    var requests = await db.Requests
+        .Where(request => request.Email == email && !request.Accepted)  
+        .GroupJoin(
+            db.Books,
+            request => request.BookId,
+            book => book.Id, 
+            (request, books) => new { request, books })
+        .SelectMany(
+            temp => temp.books.DefaultIfEmpty(),
+            (temp, book) => new { temp.request, book })
+        .GroupJoin(
+            db.Users,
+            temp => temp.request.Email,
+            user => user.Email,
+            (temp, users) => new { temp.request, temp.book, users })
+        .SelectMany(
+            temp => temp.users.DefaultIfEmpty(),
+            (temp, user) => new
+            {
+                RequestId = temp.request.Id,
+                UserEmail = user != null ? user.Email : temp.request.Email,
+                UserName = user != null ? user.Email : "Unknown User",  
+                BookId = temp.book != null ? temp.book.Id : temp.request.BookId,
+                BookName = temp.book != null ? temp.book.BookName : "Unknown Book",
+                Accepted = temp.request.Accepted
+            })
+        .ToListAsync();
+
+    return requests.Any() ? Results.Ok(requests) : Results.NotFound("No unaccepted requests found.");
+});
+
+app.MapGet("/requests/accepted/{email}", async (string email, ApplicationDbContext db) =>
+{
+    var requests = await db.Requests
+        .Where(request => request.Email == email && request.Accepted)  
+        .GroupJoin(
+            db.Books,
+            request => request.BookId,
+            book => book.Id, 
+            (request, books) => new { request, books })
+        .SelectMany(
+            temp => temp.books.DefaultIfEmpty(),
+            (temp, book) => new { temp.request, book })
+        .GroupJoin(
+            db.Users,
+            temp => temp.request.Email,
+            user => user.Email,
+            (temp, users) => new { temp.request, temp.book, users })
+        .SelectMany(
+            temp => temp.users.DefaultIfEmpty(),
+            (temp, user) => new { temp.request, temp.book, user })
+        .GroupJoin(
+            db.Lends,
+            temp => temp.request.Id,
+            lend => lend.RequestId,
+            (temp, lends) => new { temp.request, temp.book, temp.user, lends })
+        .SelectMany(
+            temp => temp.lends.DefaultIfEmpty(),
+            (temp, lend) => new
+            {
+                RequestId = temp.request.Id,
+                UserEmail = temp.user != null ? temp.user.Email : temp.request.Email,
+                BookId = temp.book != null ? temp.book.Id : temp.request.BookId,
+                BookName = temp.book != null ? temp.book.BookName : "Unknown Book",
+                StartDate = lend != null ? lend.StartDate : (DateTime?)null,
+                EndDate = lend != null ? lend.EndDate : (DateTime?)null
+            })
+        .ToListAsync();
+
+    return requests.Any() ? Results.Ok(requests) : Results.NotFound("No accepted requests found.");
+});
+
+
+
 app.Run();
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
+
 public record LoginRequest
 {
     public required string Email { get; init; }
