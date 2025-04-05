@@ -294,14 +294,13 @@
     private async Task LoadRequests()
     {
         requests = await Http.GetFromJsonAsync<List<RequestModel>>("http://localhost:5000/requests") 
-                   ?? new List<RequestModel>();
+                   ?? new List<RequestModel>();          
     }
 
-    private async Task AcceptRequest(RequestModel req)
+    private async Task AcceptRequest(RequestModel  req)
     {
         // Update the request (mark as accepted)
-        req.Accepted = true;
-        var response = await Http.PutAsJsonAsync($"http://localhost:5000/requests/{req.Id}", req);
+        var response = await Http.PutAsJsonAsync($"http://localhost:5000/requests/{req.requestId}", req);
         if(response.IsSuccessStatusCode)
         {
             await JSRuntime.InvokeVoidAsync("alert", "Request accepted!");
@@ -311,12 +310,13 @@
         {
             await JSRuntime.InvokeVoidAsync("alert", "Failed to accept request.");
         }
+
     }
 
     private async Task DeclineRequest(RequestModel req)
     {
         // Delete the request from the backend.
-        var response = await Http.DeleteAsync($"http://localhost:5000/requests/{req.Id}");
+        var response = await Http.DeleteAsync($"http://localhost:5000/requests/{req.requestId}");
         if(response.IsSuccessStatusCode)
         {
             await JSRuntime.InvokeVoidAsync("alert", "Request declined!");
@@ -330,7 +330,7 @@
 
     public class RequestModel
     {
-        public int Id { get; set; }
+        public int requestId { get; set; }
         public int BookId { get; set; }
         public string Email { get; set; } = string.Empty;
         public bool Accepted { get; set; }
