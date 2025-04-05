@@ -1,4 +1,4 @@
-@page "/users"
+@page "/catalog-addbook"
 @using FSEBACKEND.Models
 @using Microsoft.AspNetCore.Components
 @using System.Net.Http.Json
@@ -163,24 +163,24 @@
         line-height: 1.6;
     }
 
-    /* Add User Form Container */
-    .add-user-container {
+    /* Add Book Form Container */
+    .add-book-container {
         background-color: white;
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        max-width: 400px;
-        margin: 40px auto; /* Centered horizontally with some top margin */
+        max-width: 500px;
+        margin: 40px auto; /* Center horizontally and add top margin */
         text-align: center;
     }
 
-    .add-user-container h1 {
+    .add-book-container h1 {
         font-size: 2.5em;
         margin-bottom: 20px;
         color: #333;
     }
 
-    .add-user-container input {
+    .add-book-container input {
         width: 100%;
         padding: 10px;
         font-size: 1em;
@@ -190,7 +190,7 @@
         box-sizing: border-box;
     }
 
-    .add-user-container button {
+    .add-book-container button {
         padding: 10px 20px;
         font-size: 1em;
         border: none;
@@ -201,8 +201,8 @@
         transition: transform 0.2s ease, background-color 0.2s ease;
     }
 
-    .add-user-container button:hover {
-        transform: scale(1.05);
+    .add-book-container button:hover {
+        transform: scale(1.03);
         background-color: #0056b3;
     }
 </style>
@@ -225,9 +225,9 @@
                 <a href="/home">
                     <img src="images/logo.png" alt="Logo" />
                 </a>
-                <a href="/catalog">Catalog</a>
+                <a class="active" href="/catalog">Catalog</a>
                 <a href="/requests">Requests</a>
-                <a class="active" href="/users">Users</a>
+                <a href="/users">Users</a>
                 <a href="#">Challan</a>
                 <a href="#">Reviews</a>
             </div>
@@ -240,49 +240,50 @@
         <div class="content-area">
             <!-- Hero Section -->
             <div class="hero">
-                <h1>User Management</h1>
-                <p>Manage user accounts, add new users, and oversee user roles in the system.</p>
+                <h1>Add Book</h1>
+                <p>Fill out the details below to add a new book into the system.</p>
             </div>
-            <!-- Add User Form Container -->
-            <div class="add-user-container">
-                <h1>Add User</h1>
-                <input placeholder="Email" @bind="newUserEmail" />
-                <input type="password" placeholder="Password" @bind="newUserPassword" />
-                <button @onclick="AddUser">Add</button>
+            <!-- Add Book Form Container -->
+            <div class="add-book-container">
+                <h1>Add Book</h1>
+                <input placeholder="Book Name" @bind="newBookName" />
+                <input placeholder="Author Name" @bind="newWriteName" />
+                <input placeholder="Publish Date" @bind="newPublishDate" />
+                <button @onclick="AddBook">Add Book</button>
             </div>
         </div>
     </div>
 </div>
 
 @code {
-    private string newUserEmail = "";
-    private string newUserPassword = "";
+    private string newBookName = "";
+    private string newWriteName = "";
+    private string newPublishDate = "";
 
-    private async Task AddUser()
+    private async Task AddBook()
     {
-        var addUserRequest = new AddUserRequest(newUserEmail, newUserPassword);
-        var response = await Http.PostAsJsonAsync("http://localhost:5000/adduser", addUserRequest);
+        var addBookRequest = new AddBookRequest("1", newBookName, newWriteName, newPublishDate);
+        var response = await Http.PostAsJsonAsync("http://localhost:5000/addbook", addBookRequest);
         if (response.IsSuccessStatusCode)
         {
-            var result = await response.Content.ReadFromJsonAsync<AddUserResponse>();
-            if (result != null && result.Status == "User added")
+            var result = await response.Content.ReadFromJsonAsync<AddBookResponse>();
+            if (result != null && result.Status == "Book added")
             {
-                await JSRuntime.InvokeVoidAsync("alert", "User added successfully!");
+                await JSRuntime.InvokeVoidAsync("alert", "Book added successfully!");
             }
             else
             {
-                await JSRuntime.InvokeVoidAsync("alert", "Failed to add user.");
+                await JSRuntime.InvokeVoidAsync("alert", "Failed to add book.");
             }
         }
         else
         {
-            await JSRuntime.InvokeVoidAsync("alert", "Please fill out all fields correctly.");
+            await JSRuntime.InvokeVoidAsync("alert", "Please fill out all book details correctly.");
         }
     }
 
-    public record AddUserRequest(string Email, string Password);
-    public record AddUserResponse(string Status, User? User);
-    public record User(string Email, string Password, string Role);
+    public record AddBookRequest(string BookId, string BookName, string WriteName, string PublishDate);
+    public record AddBookResponse(string Status, Book? Book);
 
     private void Logout()
     {
