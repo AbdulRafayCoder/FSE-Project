@@ -235,6 +235,31 @@ app.MapGet("/requests/accepted/{email}", async (string email, ApplicationDbConte
     return requests.Any() ? Results.Ok(requests) : Results.NotFound("No accepted requests found.");
 });
 
+app.MapDelete("/books/{id}", async (int id, ApplicationDbContext db) =>
+{
+    var book = await db.Books.FindAsync(id);
+    if (book == null)
+    {
+        return Results.NotFound("Book not found.");
+    }
+
+    db.Books.Remove(book);
+    await db.SaveChangesAsync();
+    return Results.Ok(new { Status = "Book deleted", BookId = id });
+});
+
+app.MapDelete("/users/{email}", async (string email, ApplicationDbContext db) =>
+{
+    var user = await db.Users.SingleOrDefaultAsync(u => u.Email == email);
+    if (user == null)
+    {
+        return Results.NotFound("User not found.");
+    }
+
+    db.Users.Remove(user);
+    await db.SaveChangesAsync();
+    return Results.Ok(new { Status = "User deleted", Email = email });
+});
 
 
 app.Run();
