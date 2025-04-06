@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "envTbXFaqfcXZcfNSppSW1uvKny33HCbmB9UGBwqX8c=",
+  "Hash": "gDnYZ2uDnzUPrBgr5UFTnR24gBlY4ssHi/XpgkOitjQ=",
   "Source": "BlazorApp",
   "BasePath": "_content/BlazorApp",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\FSEBACKEND\\FSEBACKEND.csproj",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\FSEBACKEND\\FSEBACKEND.csproj",
       "Version": 2,
       "Source": "FSEBACKEND",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
@@ -22,38 +22,38 @@
     {
       "Name": "BlazorApp\\wwwroot",
       "Source": "BlazorApp",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\3kv8flzgw3-o2wlpouf80.gz",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\3kv8flzgw3-etnb7xlipe.gz",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/BlazorApp",
-      "RelativePath": "css/bootstrap/bootstrap.min#[.{fingerprint=o2wlpouf80}]?.css.gz",
+      "RelativePath": "css/bootstrap/bootstrap.min#[.{fingerprint=etnb7xlipe}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "RelatedAsset": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "5ehbczsria",
-      "Integrity": "zaQgQ21xlHZvWXs5wfbRfDyv1pNSojCG2fA9x7EOpoA=",
+      "Fingerprint": "4tp6b85mf5",
+      "Integrity": "2FyEJEi0KXPx5IqT0awDIlZbZg35qmOF6mUjsZad3fk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css"
+      "OriginalItemSpec": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\7loymvhq1e-61n19gt1b8.gz",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\7loymvhq1e-61n19gt1b8.gz",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "favicon#[.{fingerprint=61n19gt1b8}]?.ico.gz",
       "AssetKind": "All",
@@ -61,41 +61,41 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\favicon.ico",
+      "RelatedAsset": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\favicon.ico",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "nezsohjtde",
       "Integrity": "wfFuuYm+Lh6RbCeeiUqxw334b/hIOkp5j9eokGUM1Y0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\favicon.ico"
+      "OriginalItemSpec": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\bj8hnby9lx-l5877nzu3a.gz",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\bj8hnby9lx-psxpu4y82n.gz",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/BlazorApp",
-      "RelativePath": "css/open-iconic/README#[.{fingerprint=l5877nzu3a}]?.md.gz",
+      "RelativePath": "css/open-iconic/README#[.{fingerprint=psxpu4y82n}]?.md.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\README.md",
+      "RelatedAsset": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\README.md",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "ydy8po8ikg",
-      "Integrity": "6oaMirRh4BCmFmoLk6OHkzE1PE2FZK593zxILvdVTis=",
+      "Fingerprint": "q553ei893j",
+      "Integrity": "3lKwg6/ZMwdjzS1h7hNSYPngd5hPJekgCkTcb6/EkMk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\README.md"
+      "OriginalItemSpec": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\doj1h60rcv-kao5znno1s.gz",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\doj1h60rcv-kao5znno1s.gz",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/bootstrap/bootstrap.min.css#[.{fingerprint=kao5znno1s}]?.map.gz",
       "AssetKind": "All",
@@ -103,41 +103,41 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "RelatedAsset": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "eq4n67g8x6",
       "Integrity": "trnQgTsIn05ZhCmbV5GVL59Ce8gS5Vrvb2En2wVt/po=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\dwck7ctys4-10uzszoped.gz",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\dwck7ctys4-sjnzgf7e1h.gz",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/BlazorApp",
-      "RelativePath": "css/open-iconic/font/fonts/open-iconic#[.{fingerprint=10uzszoped}]?.svg.gz",
+      "RelativePath": "css/open-iconic/font/fonts/open-iconic#[.{fingerprint=sjnzgf7e1h}]?.svg.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "RelatedAsset": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "g61ochrz1a",
-      "Integrity": "+PvrWIB2ymEXjOQZgzcKMsB8dM9BoUeqgeJhCxD3r2Y=",
+      "Fingerprint": "t673mz4ep7",
+      "Integrity": "27Y8oN5HwPm3Lnq4ndc6QKUgTo4gMMgp80Rsx7BJueo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+      "OriginalItemSpec": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\g62xpx5w3y-cmapd0fi15.gz",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\g62xpx5w3y-cmapd0fi15.gz",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min#[.{fingerprint=cmapd0fi15}]?.css.gz",
       "AssetKind": "All",
@@ -145,20 +145,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "RelatedAsset": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "qvz7hczgpc",
       "Integrity": "ZkI1/dKtx7cv+T8mJHA/4zRJzY3H+i9h3I+lQMlQ5/I=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+      "OriginalItemSpec": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\lqwiegl96m-wk8x8xm0ah.gz",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\lqwiegl96m-wk8x8xm0ah.gz",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic#[.{fingerprint=wk8x8xm0ah}]?.otf.gz",
       "AssetKind": "All",
@@ -166,41 +166,41 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "RelatedAsset": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "Fingerprint": "gzw6z059fx",
       "Integrity": "hIC7IZDzsN/8/x7Q4PWDuy8dGV5BpkpIOTA6gK9OXok=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+      "OriginalItemSpec": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\r1im0su65m-3avojwphdg.gz",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\r1im0su65m-jcs7p5hiro.gz",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/BlazorApp",
-      "RelativePath": "css/site#[.{fingerprint=3avojwphdg}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=jcs7p5hiro}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\site.css",
+      "RelatedAsset": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "zwcddf3iy5",
-      "Integrity": "XQRmiM11BtiD2hczSkMAgpx49OKjFNuKXjGUA805GqA=",
+      "Fingerprint": "6gkmncvmrm",
+      "Integrity": "Bqh88oyWLrpv8iid7TQQaH/pqtflWp6XmtYZl5DoV3Y=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\site.css"
+      "OriginalItemSpec": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/bootstrap/bootstrap.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -211,17 +211,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "o2wlpouf80",
-      "Integrity": "YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=",
+      "Fingerprint": "etnb7xlipe",
+      "Integrity": "rldnE7wZYJj3Q43t5v8fg1ojKRwyt0Wtfm+224CacZs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/bootstrap/bootstrap.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -239,10 +239,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/FONT-LICENSE#[.{fingerprint}]?",
       "AssetKind": "All",
@@ -253,17 +253,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "z189sdz1gv",
-      "Integrity": "+Q44zfEaCMmXduni5Td+IgCbk8sSUQwES2nWs+KKQz0=",
+      "Fingerprint": "48tmkg660f",
+      "Integrity": "jA4J4h/k76zVxbFKEaWwFKJccmO0voOQ1DbUW+5YNlI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -281,10 +281,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic#[.{fingerprint}]?.eot",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic#[.{fingerprint}]?.otf",
       "AssetKind": "All",
@@ -323,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic#[.{fingerprint}]?.svg",
       "AssetKind": "All",
@@ -337,17 +337,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "10uzszoped",
-      "Integrity": "oUpLdS+SoLJFwf4bzA3iKD7TCm66oLkTpAQlVJ2s1wc=",
+      "Fingerprint": "sjnzgf7e1h",
+      "Integrity": "+P1oQ5jPzOVJGC52E1oxGXIXxxCyMlqy6A9cNxGYzVk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic#[.{fingerprint}]?.ttf",
       "AssetKind": "All",
@@ -365,10 +365,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic#[.{fingerprint}]?.woff",
       "AssetKind": "All",
@@ -386,10 +386,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/ICON-LICENSE#[.{fingerprint}]?",
       "AssetKind": "All",
@@ -400,17 +400,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "3cg08az021",
-      "Integrity": "s/Is6Ey6jfNAEfXUIOyHrXXX+RcA8hzchYnuOIWUMl4=",
+      "Fingerprint": "4dwjve0o0b",
+      "Integrity": "aF5g/izareSj02F3MPSoTGNbcMBl9nmZKDe04zjU/ss=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/README#[.{fingerprint}]?.md",
       "AssetKind": "All",
@@ -421,17 +421,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "l5877nzu3a",
-      "Integrity": "9wdNXQFE78LCNHo+Hq2eXMTx+YBf2gjsufVTJc8dAV0=",
+      "Fingerprint": "psxpu4y82n",
+      "Integrity": "p/oxU91iBE+uaDr3kYOyZPuulf4YcPAMNIz6PRA/tb0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\site.css",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/site#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -442,17 +442,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "3avojwphdg",
-      "Integrity": "pQh76dy9cp/7TZGzBgJ+t/6rXW7S4bUed6tgVj6CLts=",
+      "Fingerprint": "jcs7p5hiro",
+      "Integrity": "QwhnTxltlxdUmU4ZjbqDAB8DLZNx8Nwydff63xcSD8k=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\favicon.ico",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "favicon#[.{fingerprint}]?.ico",
       "AssetKind": "All",
@@ -470,10 +470,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\images\\logo.png",
+      "Identity": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\images\\logo.png",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "images/logo#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -494,12 +494,12 @@
   "Endpoints": [
     {
       "Route": "css/bootstrap/bootstrap.min.css",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\3kv8flzgw3-o2wlpouf80.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\3kv8flzgw3-etnb7xlipe.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000042966400"
+          "Quality": "0.000042957172"
         }
       ],
       "ResponseHeaders": [
@@ -509,15 +509,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "23273"
+          "Value": "23278"
         },
         {
           "Name": "ETag",
-          "Value": "\"zaQgQ21xlHZvWXs5wfbRfDyv1pNSojCG2fA9x7EOpoA=\""
+          "Value": "\"2FyEJEi0KXPx5IqT0awDIlZbZg35qmOF6mUjsZad3fk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -537,19 +537,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=\""
+          "Value": "W/\"rldnE7wZYJj3Q43t5v8fg1ojKRwyt0Wtfm+224CacZs=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY="
+          "Value": "sha256-rldnE7wZYJj3Q43t5v8fg1ojKRwyt0Wtfm+224CacZs="
         }
       ]
     },
     {
       "Route": "css/bootstrap/bootstrap.min.css",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -558,7 +558,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "155758"
+          "Value": "155764"
         },
         {
           "Name": "Content-Type",
@@ -566,11 +566,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=\""
+          "Value": "\"rldnE7wZYJj3Q43t5v8fg1ojKRwyt0Wtfm+224CacZs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -580,13 +580,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY="
+          "Value": "sha256-rldnE7wZYJj3Q43t5v8fg1ojKRwyt0Wtfm+224CacZs="
         }
       ]
     },
     {
       "Route": "css/bootstrap/bootstrap.min.css.gz",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\3kv8flzgw3-o2wlpouf80.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\3kv8flzgw3-etnb7xlipe.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -595,7 +595,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "23273"
+          "Value": "23278"
         },
         {
           "Name": "Content-Type",
@@ -603,11 +603,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"zaQgQ21xlHZvWXs5wfbRfDyv1pNSojCG2fA9x7EOpoA=\""
+          "Value": "\"2FyEJEi0KXPx5IqT0awDIlZbZg35qmOF6mUjsZad3fk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -625,13 +625,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-zaQgQ21xlHZvWXs5wfbRfDyv1pNSojCG2fA9x7EOpoA="
+          "Value": "sha256-2FyEJEi0KXPx5IqT0awDIlZbZg35qmOF6mUjsZad3fk="
         }
       ]
     },
     {
       "Route": "css/bootstrap/bootstrap.min.css.kao5znno1s.map",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\doj1h60rcv-kao5znno1s.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\doj1h60rcv-kao5znno1s.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -654,7 +654,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -694,7 +694,7 @@
     },
     {
       "Route": "css/bootstrap/bootstrap.min.css.kao5znno1s.map",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -715,7 +715,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -739,7 +739,7 @@
     },
     {
       "Route": "css/bootstrap/bootstrap.min.css.kao5znno1s.map.gz",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\doj1h60rcv-kao5znno1s.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\doj1h60rcv-kao5znno1s.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -760,7 +760,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -792,7 +792,7 @@
     },
     {
       "Route": "css/bootstrap/bootstrap.min.css.map",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\doj1h60rcv-kao5znno1s.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\doj1h60rcv-kao5znno1s.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -815,7 +815,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -847,7 +847,7 @@
     },
     {
       "Route": "css/bootstrap/bootstrap.min.css.map",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -868,7 +868,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -884,7 +884,7 @@
     },
     {
       "Route": "css/bootstrap/bootstrap.min.css.map.gz",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\doj1h60rcv-kao5znno1s.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\doj1h60rcv-kao5znno1s.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -905,7 +905,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -928,13 +928,13 @@
       ]
     },
     {
-      "Route": "css/bootstrap/bootstrap.min.o2wlpouf80.css",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\3kv8flzgw3-o2wlpouf80.gz",
+      "Route": "css/bootstrap/bootstrap.min.etnb7xlipe.css",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\3kv8flzgw3-etnb7xlipe.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000042966400"
+          "Quality": "0.000042957172"
         }
       ],
       "ResponseHeaders": [
@@ -944,15 +944,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "23273"
+          "Value": "23278"
         },
         {
           "Name": "ETag",
-          "Value": "\"zaQgQ21xlHZvWXs5wfbRfDyv1pNSojCG2fA9x7EOpoA=\""
+          "Value": "\"2FyEJEi0KXPx5IqT0awDIlZbZg35qmOF6mUjsZad3fk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -972,13 +972,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=\""
+          "Value": "W/\"rldnE7wZYJj3Q43t5v8fg1ojKRwyt0Wtfm+224CacZs=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "o2wlpouf80"
+          "Value": "etnb7xlipe"
         },
         {
           "Name": "label",
@@ -986,13 +986,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY="
+          "Value": "sha256-rldnE7wZYJj3Q43t5v8fg1ojKRwyt0Wtfm+224CacZs="
         }
       ]
     },
     {
-      "Route": "css/bootstrap/bootstrap.min.o2wlpouf80.css",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Route": "css/bootstrap/bootstrap.min.etnb7xlipe.css",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1001,7 +1001,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "155758"
+          "Value": "155764"
         },
         {
           "Name": "Content-Type",
@@ -1009,11 +1009,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=\""
+          "Value": "\"rldnE7wZYJj3Q43t5v8fg1ojKRwyt0Wtfm+224CacZs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1023,7 +1023,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "o2wlpouf80"
+          "Value": "etnb7xlipe"
         },
         {
           "Name": "label",
@@ -1031,13 +1031,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY="
+          "Value": "sha256-rldnE7wZYJj3Q43t5v8fg1ojKRwyt0Wtfm+224CacZs="
         }
       ]
     },
     {
-      "Route": "css/bootstrap/bootstrap.min.o2wlpouf80.css.gz",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\3kv8flzgw3-o2wlpouf80.gz",
+      "Route": "css/bootstrap/bootstrap.min.etnb7xlipe.css.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\3kv8flzgw3-etnb7xlipe.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1046,7 +1046,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "23273"
+          "Value": "23278"
         },
         {
           "Name": "Content-Type",
@@ -1054,11 +1054,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"zaQgQ21xlHZvWXs5wfbRfDyv1pNSojCG2fA9x7EOpoA=\""
+          "Value": "\"2FyEJEi0KXPx5IqT0awDIlZbZg35qmOF6mUjsZad3fk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1076,7 +1076,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "o2wlpouf80"
+          "Value": "etnb7xlipe"
         },
         {
           "Name": "label",
@@ -1084,13 +1084,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-zaQgQ21xlHZvWXs5wfbRfDyv1pNSojCG2fA9x7EOpoA="
+          "Value": "sha256-2FyEJEi0KXPx5IqT0awDIlZbZg35qmOF6mUjsZad3fk="
         }
       ]
     },
     {
       "Route": "css/open-iconic/FONT-LICENSE",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1099,7 +1099,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4017"
+          "Value": "4103"
         },
         {
           "Name": "Content-Type",
@@ -1107,11 +1107,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+Q44zfEaCMmXduni5Td+IgCbk8sSUQwES2nWs+KKQz0=\""
+          "Value": "\"jA4J4h/k76zVxbFKEaWwFKJccmO0voOQ1DbUW+5YNlI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1121,13 +1121,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-+Q44zfEaCMmXduni5Td+IgCbk8sSUQwES2nWs+KKQz0="
+          "Value": "sha256-jA4J4h/k76zVxbFKEaWwFKJccmO0voOQ1DbUW+5YNlI="
         }
       ]
     },
     {
-      "Route": "css/open-iconic/FONT-LICENSE.z189sdz1gv",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Route": "css/open-iconic/FONT-LICENSE.48tmkg660f",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1136,7 +1136,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4017"
+          "Value": "4103"
         },
         {
           "Name": "Content-Type",
@@ -1144,11 +1144,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+Q44zfEaCMmXduni5Td+IgCbk8sSUQwES2nWs+KKQz0=\""
+          "Value": "\"jA4J4h/k76zVxbFKEaWwFKJccmO0voOQ1DbUW+5YNlI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1158,7 +1158,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "z189sdz1gv"
+          "Value": "48tmkg660f"
         },
         {
           "Name": "label",
@@ -1166,13 +1166,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-+Q44zfEaCMmXduni5Td+IgCbk8sSUQwES2nWs+KKQz0="
+          "Value": "sha256-jA4J4h/k76zVxbFKEaWwFKJccmO0voOQ1DbUW+5YNlI="
         }
       ]
     },
     {
       "Route": "css/open-iconic/font/css/open-iconic-bootstrap.min.cmapd0fi15.css",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\g62xpx5w3y-cmapd0fi15.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\g62xpx5w3y-cmapd0fi15.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -1195,7 +1195,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1235,7 +1235,7 @@
     },
     {
       "Route": "css/open-iconic/font/css/open-iconic-bootstrap.min.cmapd0fi15.css",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1256,7 +1256,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1280,7 +1280,7 @@
     },
     {
       "Route": "css/open-iconic/font/css/open-iconic-bootstrap.min.cmapd0fi15.css.gz",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\g62xpx5w3y-cmapd0fi15.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\g62xpx5w3y-cmapd0fi15.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1301,7 +1301,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1333,7 +1333,7 @@
     },
     {
       "Route": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\g62xpx5w3y-cmapd0fi15.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\g62xpx5w3y-cmapd0fi15.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -1356,7 +1356,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1388,7 +1388,7 @@
     },
     {
       "Route": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1409,7 +1409,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1425,7 +1425,7 @@
     },
     {
       "Route": "css/open-iconic/font/css/open-iconic-bootstrap.min.css.gz",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\g62xpx5w3y-cmapd0fi15.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\g62xpx5w3y-cmapd0fi15.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1446,7 +1446,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1470,7 +1470,7 @@
     },
     {
       "Route": "css/open-iconic/font/fonts/open-iconic.0uw8dim9nl.eot",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1491,7 +1491,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1514,169 +1514,8 @@
       ]
     },
     {
-      "Route": "css/open-iconic/font/fonts/open-iconic.10uzszoped.svg",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\dwck7ctys4-10uzszoped.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000074571216"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "13409"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"+PvrWIB2ymEXjOQZgzcKMsB8dM9BoUeqgeJhCxD3r2Y=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/svg+xml"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"oUpLdS+SoLJFwf4bzA3iKD7TCm66oLkTpAQlVJ2s1wc=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "10uzszoped"
-        },
-        {
-          "Name": "label",
-          "Value": "css/open-iconic/font/fonts/open-iconic.svg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-oUpLdS+SoLJFwf4bzA3iKD7TCm66oLkTpAQlVJ2s1wc="
-        }
-      ]
-    },
-    {
-      "Route": "css/open-iconic/font/fonts/open-iconic.10uzszoped.svg",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "54789"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/svg+xml"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"oUpLdS+SoLJFwf4bzA3iKD7TCm66oLkTpAQlVJ2s1wc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "10uzszoped"
-        },
-        {
-          "Name": "label",
-          "Value": "css/open-iconic/font/fonts/open-iconic.svg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-oUpLdS+SoLJFwf4bzA3iKD7TCm66oLkTpAQlVJ2s1wc="
-        }
-      ]
-    },
-    {
-      "Route": "css/open-iconic/font/fonts/open-iconic.10uzszoped.svg.gz",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\dwck7ctys4-10uzszoped.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "13409"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/svg+xml"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"+PvrWIB2ymEXjOQZgzcKMsB8dM9BoUeqgeJhCxD3r2Y=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "10uzszoped"
-        },
-        {
-          "Name": "label",
-          "Value": "css/open-iconic/font/fonts/open-iconic.svg.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-+PvrWIB2ymEXjOQZgzcKMsB8dM9BoUeqgeJhCxD3r2Y="
-        }
-      ]
-    },
-    {
       "Route": "css/open-iconic/font/fonts/open-iconic.eot",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1697,7 +1536,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1713,7 +1552,7 @@
     },
     {
       "Route": "css/open-iconic/font/fonts/open-iconic.h4d0pazwgy.woff",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1734,7 +1573,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1758,7 +1597,7 @@
     },
     {
       "Route": "css/open-iconic/font/fonts/open-iconic.ll5grcv8wv.ttf",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1779,7 +1618,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1803,7 +1642,7 @@
     },
     {
       "Route": "css/open-iconic/font/fonts/open-iconic.otf",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\lqwiegl96m-wk8x8xm0ah.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\lqwiegl96m-wk8x8xm0ah.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -1826,7 +1665,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1858,7 +1697,7 @@
     },
     {
       "Route": "css/open-iconic/font/fonts/open-iconic.otf",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1879,7 +1718,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1895,7 +1734,7 @@
     },
     {
       "Route": "css/open-iconic/font/fonts/open-iconic.otf.gz",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\lqwiegl96m-wk8x8xm0ah.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\lqwiegl96m-wk8x8xm0ah.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1916,7 +1755,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1939,13 +1778,13 @@
       ]
     },
     {
-      "Route": "css/open-iconic/font/fonts/open-iconic.svg",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\dwck7ctys4-10uzszoped.gz",
+      "Route": "css/open-iconic/font/fonts/open-iconic.sjnzgf7e1h.svg",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\dwck7ctys4-sjnzgf7e1h.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000074571216"
+          "Quality": "0.000074266617"
         }
       ],
       "ResponseHeaders": [
@@ -1955,15 +1794,176 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "13409"
+          "Value": "13464"
         },
         {
           "Name": "ETag",
-          "Value": "\"+PvrWIB2ymEXjOQZgzcKMsB8dM9BoUeqgeJhCxD3r2Y=\""
+          "Value": "\"27Y8oN5HwPm3Lnq4ndc6QKUgTo4gMMgp80Rsx7BJueo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"+P1oQ5jPzOVJGC52E1oxGXIXxxCyMlqy6A9cNxGYzVk=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "sjnzgf7e1h"
+        },
+        {
+          "Name": "label",
+          "Value": "css/open-iconic/font/fonts/open-iconic.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+P1oQ5jPzOVJGC52E1oxGXIXxxCyMlqy6A9cNxGYzVk="
+        }
+      ]
+    },
+    {
+      "Route": "css/open-iconic/font/fonts/open-iconic.sjnzgf7e1h.svg",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "55332"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+P1oQ5jPzOVJGC52E1oxGXIXxxCyMlqy6A9cNxGYzVk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "sjnzgf7e1h"
+        },
+        {
+          "Name": "label",
+          "Value": "css/open-iconic/font/fonts/open-iconic.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+P1oQ5jPzOVJGC52E1oxGXIXxxCyMlqy6A9cNxGYzVk="
+        }
+      ]
+    },
+    {
+      "Route": "css/open-iconic/font/fonts/open-iconic.sjnzgf7e1h.svg.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\dwck7ctys4-sjnzgf7e1h.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13464"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"27Y8oN5HwPm3Lnq4ndc6QKUgTo4gMMgp80Rsx7BJueo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "sjnzgf7e1h"
+        },
+        {
+          "Name": "label",
+          "Value": "css/open-iconic/font/fonts/open-iconic.svg.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-27Y8oN5HwPm3Lnq4ndc6QKUgTo4gMMgp80Rsx7BJueo="
+        }
+      ]
+    },
+    {
+      "Route": "css/open-iconic/font/fonts/open-iconic.svg",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\dwck7ctys4-sjnzgf7e1h.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000074266617"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13464"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"27Y8oN5HwPm3Lnq4ndc6QKUgTo4gMMgp80Rsx7BJueo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1983,19 +1983,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"oUpLdS+SoLJFwf4bzA3iKD7TCm66oLkTpAQlVJ2s1wc=\""
+          "Value": "W/\"+P1oQ5jPzOVJGC52E1oxGXIXxxCyMlqy6A9cNxGYzVk=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-oUpLdS+SoLJFwf4bzA3iKD7TCm66oLkTpAQlVJ2s1wc="
+          "Value": "sha256-+P1oQ5jPzOVJGC52E1oxGXIXxxCyMlqy6A9cNxGYzVk="
         }
       ]
     },
     {
       "Route": "css/open-iconic/font/fonts/open-iconic.svg",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2004,7 +2004,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "54789"
+          "Value": "55332"
         },
         {
           "Name": "Content-Type",
@@ -2012,11 +2012,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"oUpLdS+SoLJFwf4bzA3iKD7TCm66oLkTpAQlVJ2s1wc=\""
+          "Value": "\"+P1oQ5jPzOVJGC52E1oxGXIXxxCyMlqy6A9cNxGYzVk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2026,13 +2026,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-oUpLdS+SoLJFwf4bzA3iKD7TCm66oLkTpAQlVJ2s1wc="
+          "Value": "sha256-+P1oQ5jPzOVJGC52E1oxGXIXxxCyMlqy6A9cNxGYzVk="
         }
       ]
     },
     {
       "Route": "css/open-iconic/font/fonts/open-iconic.svg.gz",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\dwck7ctys4-10uzszoped.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\dwck7ctys4-sjnzgf7e1h.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2041,7 +2041,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "13409"
+          "Value": "13464"
         },
         {
           "Name": "Content-Type",
@@ -2049,11 +2049,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+PvrWIB2ymEXjOQZgzcKMsB8dM9BoUeqgeJhCxD3r2Y=\""
+          "Value": "\"27Y8oN5HwPm3Lnq4ndc6QKUgTo4gMMgp80Rsx7BJueo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2071,13 +2071,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-+PvrWIB2ymEXjOQZgzcKMsB8dM9BoUeqgeJhCxD3r2Y="
+          "Value": "sha256-27Y8oN5HwPm3Lnq4ndc6QKUgTo4gMMgp80Rsx7BJueo="
         }
       ]
     },
     {
       "Route": "css/open-iconic/font/fonts/open-iconic.ttf",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2098,7 +2098,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2114,7 +2114,7 @@
     },
     {
       "Route": "css/open-iconic/font/fonts/open-iconic.wk8x8xm0ah.otf",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\lqwiegl96m-wk8x8xm0ah.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\lqwiegl96m-wk8x8xm0ah.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -2137,7 +2137,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2177,7 +2177,7 @@
     },
     {
       "Route": "css/open-iconic/font/fonts/open-iconic.wk8x8xm0ah.otf",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2198,7 +2198,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2222,7 +2222,7 @@
     },
     {
       "Route": "css/open-iconic/font/fonts/open-iconic.wk8x8xm0ah.otf.gz",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\lqwiegl96m-wk8x8xm0ah.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\lqwiegl96m-wk8x8xm0ah.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2243,7 +2243,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2275,7 +2275,7 @@
     },
     {
       "Route": "css/open-iconic/font/fonts/open-iconic.woff",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2296,7 +2296,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2312,7 +2312,7 @@
     },
     {
       "Route": "css/open-iconic/ICON-LICENSE",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2321,7 +2321,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1073"
+          "Value": "1093"
         },
         {
           "Name": "Content-Type",
@@ -2329,11 +2329,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"s/Is6Ey6jfNAEfXUIOyHrXXX+RcA8hzchYnuOIWUMl4=\""
+          "Value": "\"aF5g/izareSj02F3MPSoTGNbcMBl9nmZKDe04zjU/ss=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2343,13 +2343,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-s/Is6Ey6jfNAEfXUIOyHrXXX+RcA8hzchYnuOIWUMl4="
+          "Value": "sha256-aF5g/izareSj02F3MPSoTGNbcMBl9nmZKDe04zjU/ss="
         }
       ]
     },
     {
-      "Route": "css/open-iconic/ICON-LICENSE.3cg08az021",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Route": "css/open-iconic/ICON-LICENSE.4dwjve0o0b",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2358,7 +2358,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1073"
+          "Value": "1093"
         },
         {
           "Name": "Content-Type",
@@ -2366,11 +2366,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"s/Is6Ey6jfNAEfXUIOyHrXXX+RcA8hzchYnuOIWUMl4=\""
+          "Value": "\"aF5g/izareSj02F3MPSoTGNbcMBl9nmZKDe04zjU/ss=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2380,7 +2380,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3cg08az021"
+          "Value": "4dwjve0o0b"
         },
         {
           "Name": "label",
@@ -2388,18 +2388,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-s/Is6Ey6jfNAEfXUIOyHrXXX+RcA8hzchYnuOIWUMl4="
+          "Value": "sha256-aF5g/izareSj02F3MPSoTGNbcMBl9nmZKDe04zjU/ss="
         }
       ]
     },
     {
-      "Route": "css/open-iconic/README.l5877nzu3a.md",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\bj8hnby9lx-l5877nzu3a.gz",
+      "Route": "css/open-iconic/README.md",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\bj8hnby9lx-psxpu4y82n.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000675219446"
+          "Quality": "0.000671140940"
         }
       ],
       "ResponseHeaders": [
@@ -2409,15 +2409,152 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1480"
+          "Value": "1489"
         },
         {
           "Name": "ETag",
-          "Value": "\"6oaMirRh4BCmFmoLk6OHkzE1PE2FZK593zxILvdVTis=\""
+          "Value": "\"3lKwg6/ZMwdjzS1h7hNSYPngd5hPJekgCkTcb6/EkMk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/markdown"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"p/oxU91iBE+uaDr3kYOyZPuulf4YcPAMNIz6PRA/tb0=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-p/oxU91iBE+uaDr3kYOyZPuulf4YcPAMNIz6PRA/tb0="
+        }
+      ]
+    },
+    {
+      "Route": "css/open-iconic/README.md",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\README.md",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3615"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/markdown"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p/oxU91iBE+uaDr3kYOyZPuulf4YcPAMNIz6PRA/tb0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-p/oxU91iBE+uaDr3kYOyZPuulf4YcPAMNIz6PRA/tb0="
+        }
+      ]
+    },
+    {
+      "Route": "css/open-iconic/README.md.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\bj8hnby9lx-psxpu4y82n.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1489"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/markdown"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3lKwg6/ZMwdjzS1h7hNSYPngd5hPJekgCkTcb6/EkMk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3lKwg6/ZMwdjzS1h7hNSYPngd5hPJekgCkTcb6/EkMk="
+        }
+      ]
+    },
+    {
+      "Route": "css/open-iconic/README.psxpu4y82n.md",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\bj8hnby9lx-psxpu4y82n.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000671140940"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1489"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3lKwg6/ZMwdjzS1h7hNSYPngd5hPJekgCkTcb6/EkMk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2437,13 +2574,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"9wdNXQFE78LCNHo+Hq2eXMTx+YBf2gjsufVTJc8dAV0=\""
+          "Value": "W/\"p/oxU91iBE+uaDr3kYOyZPuulf4YcPAMNIz6PRA/tb0=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "l5877nzu3a"
+          "Value": "psxpu4y82n"
         },
         {
           "Name": "label",
@@ -2451,13 +2588,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-9wdNXQFE78LCNHo+Hq2eXMTx+YBf2gjsufVTJc8dAV0="
+          "Value": "sha256-p/oxU91iBE+uaDr3kYOyZPuulf4YcPAMNIz6PRA/tb0="
         }
       ]
     },
     {
-      "Route": "css/open-iconic/README.l5877nzu3a.md",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\README.md",
+      "Route": "css/open-iconic/README.psxpu4y82n.md",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\open-iconic\\README.md",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2466,7 +2603,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3501"
+          "Value": "3615"
         },
         {
           "Name": "Content-Type",
@@ -2474,11 +2611,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"9wdNXQFE78LCNHo+Hq2eXMTx+YBf2gjsufVTJc8dAV0=\""
+          "Value": "\"p/oxU91iBE+uaDr3kYOyZPuulf4YcPAMNIz6PRA/tb0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2488,7 +2625,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "l5877nzu3a"
+          "Value": "psxpu4y82n"
         },
         {
           "Name": "label",
@@ -2496,13 +2633,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-9wdNXQFE78LCNHo+Hq2eXMTx+YBf2gjsufVTJc8dAV0="
+          "Value": "sha256-p/oxU91iBE+uaDr3kYOyZPuulf4YcPAMNIz6PRA/tb0="
         }
       ]
     },
     {
-      "Route": "css/open-iconic/README.l5877nzu3a.md.gz",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\bj8hnby9lx-l5877nzu3a.gz",
+      "Route": "css/open-iconic/README.psxpu4y82n.md.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\bj8hnby9lx-psxpu4y82n.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2511,7 +2648,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1480"
+          "Value": "1489"
         },
         {
           "Name": "Content-Type",
@@ -2519,11 +2656,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"6oaMirRh4BCmFmoLk6OHkzE1PE2FZK593zxILvdVTis=\""
+          "Value": "\"3lKwg6/ZMwdjzS1h7hNSYPngd5hPJekgCkTcb6/EkMk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2541,7 +2678,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "l5877nzu3a"
+          "Value": "psxpu4y82n"
         },
         {
           "Name": "label",
@@ -2549,18 +2686,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-6oaMirRh4BCmFmoLk6OHkzE1PE2FZK593zxILvdVTis="
+          "Value": "sha256-3lKwg6/ZMwdjzS1h7hNSYPngd5hPJekgCkTcb6/EkMk="
         }
       ]
     },
     {
-      "Route": "css/open-iconic/README.md",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\bj8hnby9lx-l5877nzu3a.gz",
+      "Route": "css/site.css",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\r1im0su65m-jcs7p5hiro.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000675219446"
+          "Quality": "0.000866551127"
         }
       ],
       "ResponseHeaders": [
@@ -2570,15 +2707,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1480"
+          "Value": "1153"
         },
         {
           "Name": "ETag",
-          "Value": "\"6oaMirRh4BCmFmoLk6OHkzE1PE2FZK593zxILvdVTis=\""
+          "Value": "\"Bqh88oyWLrpv8iid7TQQaH/pqtflWp6XmtYZl5DoV3Y=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2594,23 +2731,23 @@
         },
         {
           "Name": "Content-Type",
-          "Value": "text/markdown"
+          "Value": "text/css"
         },
         {
           "Name": "ETag",
-          "Value": "W/\"9wdNXQFE78LCNHo+Hq2eXMTx+YBf2gjsufVTJc8dAV0=\""
+          "Value": "W/\"QwhnTxltlxdUmU4ZjbqDAB8DLZNx8Nwydff63xcSD8k=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-9wdNXQFE78LCNHo+Hq2eXMTx+YBf2gjsufVTJc8dAV0="
+          "Value": "sha256-QwhnTxltlxdUmU4ZjbqDAB8DLZNx8Nwydff63xcSD8k="
         }
       ]
     },
     {
-      "Route": "css/open-iconic/README.md",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\open-iconic\\README.md",
+      "Route": "css/site.css",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2619,19 +2756,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3501"
+          "Value": "3623"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/markdown"
+          "Value": "text/css"
         },
         {
           "Name": "ETag",
-          "Value": "\"9wdNXQFE78LCNHo+Hq2eXMTx+YBf2gjsufVTJc8dAV0=\""
+          "Value": "\"QwhnTxltlxdUmU4ZjbqDAB8DLZNx8Nwydff63xcSD8k=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2641,13 +2778,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-9wdNXQFE78LCNHo+Hq2eXMTx+YBf2gjsufVTJc8dAV0="
+          "Value": "sha256-QwhnTxltlxdUmU4ZjbqDAB8DLZNx8Nwydff63xcSD8k="
         }
       ]
     },
     {
-      "Route": "css/open-iconic/README.md.gz",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\bj8hnby9lx-l5877nzu3a.gz",
+      "Route": "css/site.css.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\r1im0su65m-jcs7p5hiro.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2656,19 +2793,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1480"
+          "Value": "1153"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/markdown"
+          "Value": "text/css"
         },
         {
           "Name": "ETag",
-          "Value": "\"6oaMirRh4BCmFmoLk6OHkzE1PE2FZK593zxILvdVTis=\""
+          "Value": "\"Bqh88oyWLrpv8iid7TQQaH/pqtflWp6XmtYZl5DoV3Y=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2686,18 +2823,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-6oaMirRh4BCmFmoLk6OHkzE1PE2FZK593zxILvdVTis="
+          "Value": "sha256-Bqh88oyWLrpv8iid7TQQaH/pqtflWp6XmtYZl5DoV3Y="
         }
       ]
     },
     {
-      "Route": "css/site.3avojwphdg.css",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\r1im0su65m-3avojwphdg.gz",
+      "Route": "css/site.jcs7p5hiro.css",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\r1im0su65m-jcs7p5hiro.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000878734622"
+          "Quality": "0.000866551127"
         }
       ],
       "ResponseHeaders": [
@@ -2707,15 +2844,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1137"
+          "Value": "1153"
         },
         {
           "Name": "ETag",
-          "Value": "\"XQRmiM11BtiD2hczSkMAgpx49OKjFNuKXjGUA805GqA=\""
+          "Value": "\"Bqh88oyWLrpv8iid7TQQaH/pqtflWp6XmtYZl5DoV3Y=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2735,13 +2872,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"pQh76dy9cp/7TZGzBgJ+t/6rXW7S4bUed6tgVj6CLts=\""
+          "Value": "W/\"QwhnTxltlxdUmU4ZjbqDAB8DLZNx8Nwydff63xcSD8k=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3avojwphdg"
+          "Value": "jcs7p5hiro"
         },
         {
           "Name": "label",
@@ -2749,13 +2886,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-pQh76dy9cp/7TZGzBgJ+t/6rXW7S4bUed6tgVj6CLts="
+          "Value": "sha256-QwhnTxltlxdUmU4ZjbqDAB8DLZNx8Nwydff63xcSD8k="
         }
       ]
     },
     {
-      "Route": "css/site.3avojwphdg.css",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\site.css",
+      "Route": "css/site.jcs7p5hiro.css",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2764,7 +2901,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3438"
+          "Value": "3623"
         },
         {
           "Name": "Content-Type",
@@ -2772,11 +2909,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pQh76dy9cp/7TZGzBgJ+t/6rXW7S4bUed6tgVj6CLts=\""
+          "Value": "\"QwhnTxltlxdUmU4ZjbqDAB8DLZNx8Nwydff63xcSD8k=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2786,7 +2923,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3avojwphdg"
+          "Value": "jcs7p5hiro"
         },
         {
           "Name": "label",
@@ -2794,13 +2931,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-pQh76dy9cp/7TZGzBgJ+t/6rXW7S4bUed6tgVj6CLts="
+          "Value": "sha256-QwhnTxltlxdUmU4ZjbqDAB8DLZNx8Nwydff63xcSD8k="
         }
       ]
     },
     {
-      "Route": "css/site.3avojwphdg.css.gz",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\r1im0su65m-3avojwphdg.gz",
+      "Route": "css/site.jcs7p5hiro.css.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\r1im0su65m-jcs7p5hiro.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2809,7 +2946,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1137"
+          "Value": "1153"
         },
         {
           "Name": "Content-Type",
@@ -2817,11 +2954,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"XQRmiM11BtiD2hczSkMAgpx49OKjFNuKXjGUA805GqA=\""
+          "Value": "\"Bqh88oyWLrpv8iid7TQQaH/pqtflWp6XmtYZl5DoV3Y=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2839,7 +2976,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3avojwphdg"
+          "Value": "jcs7p5hiro"
         },
         {
           "Name": "label",
@@ -2847,150 +2984,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-XQRmiM11BtiD2hczSkMAgpx49OKjFNuKXjGUA805GqA="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\r1im0su65m-3avojwphdg.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000878734622"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1137"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"XQRmiM11BtiD2hczSkMAgpx49OKjFNuKXjGUA805GqA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"pQh76dy9cp/7TZGzBgJ+t/6rXW7S4bUed6tgVj6CLts=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-pQh76dy9cp/7TZGzBgJ+t/6rXW7S4bUed6tgVj6CLts="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3438"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"pQh76dy9cp/7TZGzBgJ+t/6rXW7S4bUed6tgVj6CLts=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-pQh76dy9cp/7TZGzBgJ+t/6rXW7S4bUed6tgVj6CLts="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css.gz",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\r1im0su65m-3avojwphdg.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1137"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"XQRmiM11BtiD2hczSkMAgpx49OKjFNuKXjGUA805GqA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-XQRmiM11BtiD2hczSkMAgpx49OKjFNuKXjGUA805GqA="
+          "Value": "sha256-Bqh88oyWLrpv8iid7TQQaH/pqtflWp6XmtYZl5DoV3Y="
         }
       ]
     },
     {
       "Route": "favicon.61n19gt1b8.ico",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\7loymvhq1e-61n19gt1b8.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\7loymvhq1e-61n19gt1b8.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -3013,7 +3013,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3053,7 +3053,7 @@
     },
     {
       "Route": "favicon.61n19gt1b8.ico",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\favicon.ico",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3074,7 +3074,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3098,7 +3098,7 @@
     },
     {
       "Route": "favicon.61n19gt1b8.ico.gz",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\7loymvhq1e-61n19gt1b8.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\7loymvhq1e-61n19gt1b8.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3119,7 +3119,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3151,7 +3151,7 @@
     },
     {
       "Route": "favicon.ico",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\7loymvhq1e-61n19gt1b8.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\7loymvhq1e-61n19gt1b8.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -3174,7 +3174,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3206,7 +3206,7 @@
     },
     {
       "Route": "favicon.ico",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\favicon.ico",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3227,7 +3227,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3243,7 +3243,7 @@
     },
     {
       "Route": "favicon.ico.gz",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\7loymvhq1e-61n19gt1b8.gz",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\obj\\Debug\\net9.0\\compressed\\7loymvhq1e-61n19gt1b8.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3264,7 +3264,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:44 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3288,7 +3288,7 @@
     },
     {
       "Route": "images/logo.j662ykvxex.png",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\images\\logo.png",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\images\\logo.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3309,7 +3309,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3333,7 +3333,7 @@
     },
     {
       "Route": "images/logo.png",
-      "AssetFile": "C:\\Users\\rafwa\\Desktop\\Fse-Assignment\\BlazorApp\\wwwroot\\images\\logo.png",
+      "AssetFile": "C:\\Users\\madha\\source\\repos\\FSE-Project\\BlazorApp\\wwwroot\\images\\logo.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3354,7 +3354,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:47 GMT"
+          "Value": "Sat, 05 Apr 2025 17:02:23 GMT"
         },
         {
           "Name": "Cache-Control",

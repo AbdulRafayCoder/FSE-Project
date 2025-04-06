@@ -1,6 +1,10 @@
-@page "/home"
+@page "/users-student"
+@using FSEBACKEND.Models
 @using Microsoft.AspNetCore.Components
+@using System.Net.Http.Json
 @inject NavigationManager NavigationManager
+@inject HttpClient Http
+@inject IJSRuntime JSRuntime
 
 <style>
     /* Main container for the entire page */
@@ -20,9 +24,9 @@
         justify-content: space-between; /* Space between logo and user info */
         background-color: #1d1d1d; /* Dark gray */
         color: white;
-        padding: 10px 20px; /* Increased padding */
+        padding: 10px 20px;
         box-sizing: border-box;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Added shadow */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
     .top-bar .logo-container {
@@ -31,7 +35,7 @@
     }
 
     .top-bar .logo-container img {
-        height: 30px; /* Small logo for the top bar */
+        height: 30px;
         width: auto;
         margin-right: 10px;
     }
@@ -102,6 +106,10 @@
         background-color: #f0f0f0;
     }
 
+    .sidebar a.active {
+        background-color: #ddd;
+    }
+
     .sidebar .logout {
         display: flex;
         justify-content: center;
@@ -119,7 +127,6 @@
     }
 
     .sidebar .logout:hover {
-        text-decoration: none;
         transform: scale(1.05);
         background-color: #f0f0f0;
     }
@@ -133,6 +140,7 @@
         flex-direction: column;
         box-sizing: border-box;
         overflow-y: auto;
+        position: relative;
     }
 
     /* Hero Section */
@@ -155,39 +163,47 @@
         line-height: 1.6;
     }
 
-    /* Feature Cards */
-    .features {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin-top: 20px;
-    }
-
-    .feature-card {
-        flex: 1 1 calc(33.333% - 20px);
+    /* Add User Form Container */
+    .add-user-container {
         background-color: white;
-        border: 1px solid #ddd;
+        padding: 20px;
         border-radius: 8px;
-        padding: 15px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        animation: fadeIn 0.5s ease-in-out;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        max-width: 400px;
+        margin: 40px auto; /* Centered horizontally with some top margin */
+        text-align: center;
     }
 
-    .feature-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .feature-card h3 {
-        font-size: 1.5em;
+    .add-user-container h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
         color: #333;
-        margin-bottom: 10px;
     }
 
-    .feature-card p {
+    .add-user-container input {
+        width: 100%;
+        padding: 10px;
         font-size: 1em;
-        color: #555;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+    }
+
+    .add-user-container button {
+        padding: 10px 20px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .add-user-container button:hover {
+        transform: scale(1.05);
+        background-color: #0056b3;
     }
 </style>
 
@@ -198,7 +214,7 @@
             <img src="images/logo.png" alt="Top Logo" />
             <a href="/home">BookTech Digital</a>
         </div>
-        <span>Logged in as: Admin</span> <!-- Display user role here -->
+        <span>Logged in as: Student</span>
     </div>
 
     <!-- Page Container -->
@@ -209,9 +225,9 @@
                 <a href="/home">
                     <img src="images/logo.png" alt="Logo" />
                 </a>
-                <a href="/catalog">Catalog</a>
-                <a href="/requests">Requests</a>
-                <a href="/users">Users</a>
+                <a href="/catalog-student">Catalog</a>
+                <a href="/requests-student">Requests</a>
+                <a class="active" href="/users-student">Users</a>
                 <a href="#">Challan</a>
                 <a href="#">Reviews</a>
             </div>
@@ -224,43 +240,50 @@
         <div class="content-area">
             <!-- Hero Section -->
             <div class="hero">
-                <h1>Welcome to BookTech Digital</h1>
-                <p>
-                    BookTech Digital is your one-stop solution for managing a digital library. Whether you're a user looking to explore our extensive catalog or an administrator managing profiles, our platform is designed to make your experience seamless and efficient.
-                </p>
+                <h1>User Management</h1>
+                <p>Manage user accounts, add new users, and oversee user roles in the system.</p>
             </div>
-            <!-- Features Section -->
-            <div class="features">
-                <div class="feature-card">
-                    <h3>Book Catalog</h3>
-                    <p>Browse through a wide range of books available in our library and find your next read.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Book Reviews</h3>
-                    <p>Read reviews from other readers to help you decide on your next book.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Book Assignment</h3>
-                    <p>Request books for borrowing and manage your reading list effortlessly.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Challan Generation</h3>
-                    <p>View your due bills, return dates, and overdue charges in one place.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Challan Payment</h3>
-                    <p>Simulate challan payments and stay on top of your dues.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>User Profile Management</h3>
-                    <p>Manage your account details and provide reviews for books you've read.</p>
-                </div>
+            <!-- Add User Form Container -->
+            <div class="add-user-container">
+                <h1>Add User</h1>
+                <input placeholder="Email" @bind="newUserEmail" />
+                <input type="password" placeholder="Password" @bind="newUserPassword" />
+                <button @onclick="AddUser">Add</button>
             </div>
         </div>
     </div>
 </div>
 
 @code {
+    private string newUserEmail = "";
+    private string newUserPassword = "";
+
+    private async Task AddUser()
+    {
+        var addUserRequest = new AddUserRequest(newUserEmail, newUserPassword);
+        var response = await Http.PostAsJsonAsync("http://localhost:5000/adduser", addUserRequest);
+        if (response.IsSuccessStatusCode)
+        {
+            var result = await response.Content.ReadFromJsonAsync<AddUserResponse>();
+            if (result != null && result.Status == "User added")
+            {
+                await JSRuntime.InvokeVoidAsync("alert", "User added successfully!");
+            }
+            else
+            {
+                await JSRuntime.InvokeVoidAsync("alert", "Failed to add user.");
+            }
+        }
+        else
+        {
+            await JSRuntime.InvokeVoidAsync("alert", "Please fill out all fields correctly.");
+        }
+    }
+
+    public record AddUserRequest(string Email, string Password);
+    public record AddUserResponse(string Status, User? User);
+    public record User(string Email, string Password, string Role);
+
     private void Logout()
     {
         NavigationManager.NavigateTo("/login");

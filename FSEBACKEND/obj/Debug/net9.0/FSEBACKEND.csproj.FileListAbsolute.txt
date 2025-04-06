@@ -294,3 +294,4 @@ C:\Users\madha\source\repos\FSE-Project\FSEBACKEND\bin\Debug\net9.0\Microsoft.Ex
 C:\Users\madha\source\repos\FSE-Project\FSEBACKEND\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\madha\source\repos\FSE-Project\FSEBACKEND\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
 C:\Users\madha\source\repos\FSE-Project\FSEBACKEND\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\Users\madha\source\repos\FSE-Project\FSEBACKEND\obj\Debug\net9.0\FSEBACKEND.sourcelink.json

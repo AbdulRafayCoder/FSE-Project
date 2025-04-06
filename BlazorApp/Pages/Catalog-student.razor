@@ -1,4 +1,4 @@
-@page "/users"
+@page "/catalog-student"
 @using FSEBACKEND.Models
 @using Microsoft.AspNetCore.Components
 @using System.Net.Http.Json
@@ -13,7 +13,7 @@
         flex-direction: column;
         height: 100vh;
         box-sizing: border-box;
-        overflow: hidden;
+        overflow: hidden; /* Prevent page scrolling */
         font-family: Arial, sans-serif;
     }
 
@@ -24,9 +24,9 @@
         justify-content: space-between; /* Space between logo and user info */
         background-color: #1d1d1d; /* Dark gray */
         color: white;
-        padding: 10px 20px;
+        padding: 10px 20px; /* Increased padding */
         box-sizing: border-box;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Added shadow */
     }
 
     .top-bar .logo-container {
@@ -35,7 +35,7 @@
     }
 
     .top-bar .logo-container img {
-        height: 30px;
+        height: 30px; /* Small logo for the top bar */
         width: auto;
         margin-right: 10px;
     }
@@ -107,7 +107,7 @@
     }
 
     .sidebar a.active {
-        background-color: #ddd;
+        background-color: #ddd; /* Highlight the active link */
     }
 
     .sidebar .logout {
@@ -139,7 +139,7 @@
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
-        overflow-y: auto;
+        overflow: hidden; /* Prevent area from scrolling; inner sections will scroll */
         position: relative;
     }
 
@@ -163,34 +163,68 @@
         line-height: 1.6;
     }
 
-    /* Add User Form Container */
-    .add-user-container {
-        background-color: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        max-width: 400px;
-        margin: 40px auto; /* Centered horizontally with some top margin */
-        text-align: center;
-    }
-
-    .add-user-container h1 {
-        font-size: 2.5em;
-        margin-bottom: 20px;
-        color: #333;
-    }
-
-    .add-user-container input {
-        width: 100%;
+    /* Book Cards Section */
+    .features {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        overflow-y: auto; /* Make books section scrollable */
+        overflow-x: hidden;
         padding: 10px;
-        font-size: 1em;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin-bottom: 15px;
-        box-sizing: border-box;
+        height: calc(100% - 140px); /* Adjust height so it ends above the Add Book button */
+        margin-bottom: 20px; /* Space above Add Book button */
+        box-shadow: inset 0 2px 5px rgba(0,0,0,0.1); /* Subtle inner shadow for distinction */
     }
 
-    .add-user-container button {
+    .feature-card {
+        flex: 1 1 calc(25% - 20px);
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 25px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .feature-card:hover {
+        transform: scale(1.03); /* Reduced scaling to avoid overflow */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .feature-card h3 {
+        font-size: 1.5em;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .feature-card p {
+        font-size: 1em;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    .feature-card button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+        border: none;
+        border-radius: 5px;
+        background-color: #28a745;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    .feature-card button:hover {
+        background-color: #218838;
+    }
+
+    /* Add Book Button (fixed at bottom center) */
+    .add-book-btn {
+        position: absolute;
+        bottom: 20px;
+        align-self: center;
         padding: 10px 20px;
         font-size: 1em;
         border: none;
@@ -201,7 +235,7 @@
         transition: transform 0.2s ease, background-color 0.2s ease;
     }
 
-    .add-user-container button:hover {
+    .add-book-btn:hover {
         transform: scale(1.05);
         background-color: #0056b3;
     }
@@ -214,7 +248,7 @@
             <img src="images/logo.png" alt="Top Logo" />
             <a href="/home">BookTech Digital</a>
         </div>
-        <span>Logged in as: Admin</span>
+        <span>Logged in as: Student</span>
     </div>
 
     <!-- Page Container -->
@@ -225,9 +259,9 @@
                 <a href="/home">
                     <img src="images/logo.png" alt="Logo" />
                 </a>
-                <a href="/catalog">Catalog</a>
-                <a href="/requests">Requests</a>
-                <a class="active" href="/users">Users</a>
+                <a class="active" href="/catalog-student">Catalog</a>
+                <a href="/requests-student">Requests</a>
+                <a href="/users-student">Users</a>
                 <a href="#">Challan</a>
                 <a href="#">Reviews</a>
             </div>
@@ -240,52 +274,70 @@
         <div class="content-area">
             <!-- Hero Section -->
             <div class="hero">
-                <h1>User Management</h1>
-                <p>Manage user accounts, add new users, and oversee user roles in the system.</p>
+                <h1>Book Catalog</h1>
+                <p>Explore our collection. Request a book to borrow it or add a new one.</p>
             </div>
-            <!-- Add User Form Container -->
-            <div class="add-user-container">
-                <h1>Add User</h1>
-                <input placeholder="Email" @bind="newUserEmail" />
-                <input type="password" placeholder="Password" @bind="newUserPassword" />
-                <button @onclick="AddUser">Add</button>
+            <!-- Books Listing -->
+            <div class="features">
+                @if (books is not null && books.Any())
+                {
+                    @foreach (var book in books)
+                    {
+                        <div class="feature-card">
+                            <h3>@book.BookName</h3>
+                            <p><strong>Author:</strong> @book.WriteName</p>
+                            <p><strong>Published:</strong> @book.PublishDate</p>
+                            <button @onclick="() => RequestBook(book)">Request Book</button>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No books found.</p>
+                }
             </div>
+            <!-- Add Book Button -->
+            <button class="add-book-btn" @onclick="GoToAddBook">Add Book</button>
         </div>
     </div>
 </div>
 
 @code {
-    private string newUserEmail = "";
-    private string newUserPassword = "";
+    private List<Book> books = new List<Book>();
+    private string currentUserEmail = "test@example.com";
 
-    private async Task AddUser()
+    protected override async Task OnInitializedAsync()
     {
-        var addUserRequest = new AddUserRequest(newUserEmail, newUserPassword);
-        var response = await Http.PostAsJsonAsync("http://localhost:5000/adduser", addUserRequest);
+        books = await Http.GetFromJsonAsync<List<Book>>("http://localhost:5000/books") ?? new List<Book>();
+    }
+
+    private async Task RequestBook(Book book)
+    {
+        var request = new Request(book.Id.ToString(), currentUserEmail, false);
+
+        // Use the corrected endpoint = "/addrequest"
+        var response = await Http.PostAsJsonAsync("http://localhost:5000/addrequest", request);
         if (response.IsSuccessStatusCode)
         {
-            var result = await response.Content.ReadFromJsonAsync<AddUserResponse>();
-            if (result != null && result.Status == "User added")
-            {
-                await JSRuntime.InvokeVoidAsync("alert", "User added successfully!");
-            }
-            else
-            {
-                await JSRuntime.InvokeVoidAsync("alert", "Failed to add user.");
-            }
+            await JSRuntime.InvokeVoidAsync("alert", $"Request for \"{book.BookName}\" submitted successfully!");
         }
         else
         {
-            await JSRuntime.InvokeVoidAsync("alert", "Please fill out all fields correctly.");
+            await JSRuntime.InvokeVoidAsync("alert", "Failed to submit the book request.");
         }
     }
 
-    public record AddUserRequest(string Email, string Password);
-    public record AddUserResponse(string Status, User? User);
-    public record User(string Email, string Password, string Role);
+    public record Request(string BookId, string Email, bool Accepted);
+
+    private void GoToAddBook()
+    {
+        NavigationManager.NavigateTo("/catalog-addbook");
+    }
 
     private void Logout()
     {
         NavigationManager.NavigateTo("/login");
     }
+
+
 }

@@ -1,10 +1,6 @@
-@page "/catalog"
-@using FSEBACKEND.Models
+@page "/home-student"
 @using Microsoft.AspNetCore.Components
-@using System.Net.Http.Json
 @inject NavigationManager NavigationManager
-@inject HttpClient Http
-@inject IJSRuntime JSRuntime
 
 <style>
     /* Main container for the entire page */
@@ -13,7 +9,7 @@
         flex-direction: column;
         height: 100vh;
         box-sizing: border-box;
-        overflow: hidden; /* Prevent page scrolling */
+        overflow: hidden;
         font-family: Arial, sans-serif;
     }
 
@@ -106,10 +102,6 @@
         background-color: #f0f0f0;
     }
 
-    .sidebar a.active {
-        background-color: #ddd; /* Highlight the active link */
-    }
-
     .sidebar .logout {
         display: flex;
         justify-content: center;
@@ -127,6 +119,7 @@
     }
 
     .sidebar .logout:hover {
+        text-decoration: none;
         transform: scale(1.05);
         background-color: #f0f0f0;
     }
@@ -139,8 +132,7 @@
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
-        overflow: hidden; /* Prevent area from scrolling; inner sections will scroll */
-        position: relative;
+        overflow-y: auto;
     }
 
     /* Hero Section */
@@ -163,33 +155,27 @@
         line-height: 1.6;
     }
 
-    /* Book Cards Section */
+    /* Feature Cards */
     .features {
-        flex: 1;
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
-        overflow-y: auto; /* Make books section scrollable */
-        overflow-x: hidden;
-        padding: 10px;
-        height: calc(100% - 140px); /* Adjust height so it ends above the Add Book button */
-        margin-bottom: 20px; /* Space above Add Book button */
-        box-shadow: inset 0 2px 5px rgba(0,0,0,0.1); /* Subtle inner shadow for distinction */
+        margin-top: 20px;
     }
 
     .feature-card {
-        flex: 1 1 calc(25% - 20px);
+        flex: 1 1 calc(33.333% - 20px);
         background-color: white;
         border: 1px solid #ddd;
         border-radius: 8px;
-        padding: 25px;
+        padding: 15px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
         animation: fadeIn 0.5s ease-in-out;
     }
 
     .feature-card:hover {
-        transform: scale(1.03); /* Reduced scaling to avoid overflow */
+        transform: scale(1.05);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
@@ -202,42 +188,6 @@
     .feature-card p {
         font-size: 1em;
         color: #555;
-        margin-bottom: 10px;
-    }
-
-    .feature-card button {
-        padding: 8px 16px;
-        font-size: 0.9em;
-        border: none;
-        border-radius: 5px;
-        background-color: #28a745;
-        color: white;
-        cursor: pointer;
-        transition: background-color 0.2s ease;
-    }
-
-    .feature-card button:hover {
-        background-color: #218838;
-    }
-
-    /* Add Book Button (fixed at bottom center) */
-    .add-book-btn {
-        position: absolute;
-        bottom: 20px;
-        align-self: center;
-        padding: 10px 20px;
-        font-size: 1em;
-        border: none;
-        border-radius: 5px;
-        background-color: #007bff;
-        color: white;
-        cursor: pointer;
-        transition: transform 0.2s ease, background-color 0.2s ease;
-    }
-
-    .add-book-btn:hover {
-        transform: scale(1.05);
-        background-color: #0056b3;
     }
 </style>
 
@@ -248,7 +198,7 @@
             <img src="images/logo.png" alt="Top Logo" />
             <a href="/home">BookTech Digital</a>
         </div>
-        <span>Logged in as: Admin</span>
+        <span>Logged in as: Student</span> <!-- Display user role here -->
     </div>
 
     <!-- Page Container -->
@@ -259,9 +209,9 @@
                 <a href="/home">
                     <img src="images/logo.png" alt="Logo" />
                 </a>
-                <a class="active" href="/catalog">Catalog</a>
-                <a href="/requests">Requests</a>
-                <a href="/users">Users</a>
+                <a href="/catalog-student">Catalog</a>
+                <a href="/requests-student">Requests</a>
+                <a href="/users-student">Users</a>
                 <a href="#">Challan</a>
                 <a href="#">Reviews</a>
             </div>
@@ -274,70 +224,45 @@
         <div class="content-area">
             <!-- Hero Section -->
             <div class="hero">
-                <h1>Book Catalog</h1>
-                <p>Explore our collection. Request a book to borrow it or add a new one.</p>
+                <h1>Welcome to BookTech Digital</h1>
+                <p>
+                    BookTech Digital is your one-stop solution for managing a digital library. Whether you're a user looking to explore our extensive catalog or an administrator managing profiles, our platform is designed to make your experience seamless and efficient.
+                </p>
             </div>
-            <!-- Books Listing -->
+            <!-- Features Section -->
             <div class="features">
-                @if (books is not null && books.Any())
-                {
-                    @foreach (var book in books)
-                    {
-                        <div class="feature-card">
-                            <h3>@book.BookName</h3>
-                            <p><strong>Author:</strong> @book.WriteName</p>
-                            <p><strong>Published:</strong> @book.PublishDate</p>
-                            <button @onclick="() => RequestBook(book)">Request Book</button>
-                        </div>
-                    }
-                }
-                else
-                {
-                    <p>No books found.</p>
-                }
+                <div class="feature-card">
+                    <h3>Book Catalog</h3>
+                    <p>Browse through a wide range of books available in our library and find your next read.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Book Reviews</h3>
+                    <p>Read reviews from other readers to help you decide on your next book.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Book Assignment</h3>
+                    <p>Request books for borrowing and manage your reading list effortlessly.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Challan Generation</h3>
+                    <p>View your due bills, return dates, and overdue charges in one place.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Challan Payment</h3>
+                    <p>Simulate challan payments and stay on top of your dues.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>User Profile Management</h3>
+                    <p>Manage your account details and provide reviews for books you've read.</p>
+                </div>
             </div>
-            <!-- Add Book Button -->
-            <button class="add-book-btn" @onclick="GoToAddBook">Add Book</button>
         </div>
     </div>
 </div>
 
 @code {
-    private List<Book> books = new List<Book>();
-    private string currentUserEmail = "test@example.com";
-
-    protected override async Task OnInitializedAsync()
-    {
-        books = await Http.GetFromJsonAsync<List<Book>>("http://localhost:5000/books") ?? new List<Book>();
-    }
-
-    private async Task RequestBook(Book book)
-    {
-        var request = new Request(book.Id.ToString(), currentUserEmail, false);
-
-        // Use the corrected endpoint = "/addrequest"
-        var response = await Http.PostAsJsonAsync("http://localhost:5000/addrequest", request);
-        if (response.IsSuccessStatusCode)
-        {
-            await JSRuntime.InvokeVoidAsync("alert", $"Request for \"{book.BookName}\" submitted successfully!");
-        }
-        else
-        {
-            await JSRuntime.InvokeVoidAsync("alert", "Failed to submit the book request.");
-        }
-    }
-
-    public record Request(string BookId, string Email, bool Accepted);
-
-    private void GoToAddBook()
-    {
-        NavigationManager.NavigateTo("/catalog-addbook");
-    }
-
     private void Logout()
     {
         NavigationManager.NavigateTo("/login");
     }
-
-
 }

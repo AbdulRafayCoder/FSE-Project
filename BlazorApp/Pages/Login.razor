@@ -195,8 +195,15 @@
 
         if (result.Status)
         {
-            // Redirect to the main application page
-            NavigationManager.NavigateTo("/home");
+            // Redirect based on user role
+            if (result.Role == "admin")
+            {
+                NavigationManager.NavigateTo("/home-admin");
+            }
+            else
+            {
+                NavigationManager.NavigateTo("/home-student");
+            }
         }
         else
         {

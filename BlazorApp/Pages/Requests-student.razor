@@ -1,0 +1,378 @@
+@page "/requests-student"
+@using FSEBACKEND.Models
+@using Microsoft.AspNetCore.Components
+@using System.Net.Http.Json
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+
+<style>
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        box-sizing: border-box;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+    }
+
+    .top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #1d1d1d;
+        color: white;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .top-bar .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .top-bar .logo-container img {
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    .top-bar .logo-container a {
+        font-size: 1.7em;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+        transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .top-bar .logo-container a:hover {
+        transform: scale(1.05);
+        color: #ddd;
+    }
+
+    .top-bar span {
+        font-size: 1em;
+        color: #ddd;
+        font-weight: bold;
+    }
+
+    .page_container {
+        display: flex;
+        flex: 1;
+        background: white;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .sidebar {
+        flex: 1;
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .sidebar img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .sidebar a {
+        color: black;
+        margin: 15px 0;
+        font-size: 1.2em;
+        display: block;
+        text-align: center;
+        padding: 10px;
+        background-color: white;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .sidebar a:hover {
+        text-decoration: none;
+        transform: scale(1.05);
+        background-color: #f0f0f0;
+    }
+
+    .sidebar a.active {
+        background-color: #ddd;
+    }
+
+    .sidebar .logout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin-top: auto;
+        text-align: center;
+        padding: 10px;
+        background-color: white;
+        color: black;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .sidebar .logout:hover {
+        transform: scale(1.05);
+        background-color: #f0f0f0;
+    }
+
+    .content-area {
+        flex: 7;
+        padding: 20px;
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #4b79a1, #283e51);
+        color: white;
+        padding: 40px 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+        line-height: 1.6;
+    }
+
+    .filter-buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .filter-buttons button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+        width: 120px; /* Ensures all buttons are the same size */
+    }
+
+    .filter-buttons button.pending {
+        background: linear-gradient(135deg, #ffc107, #e0a800);
+        color: black;
+    }
+
+    .filter-buttons button.pending:hover {
+        transform: scale(1.05);
+    }
+
+    .filter-buttons button.accepted {
+        background: linear-gradient(135deg, #28a745, #218838);
+        color: white;
+    }
+
+    .filter-buttons button.accepted:hover {
+        transform: scale(1.05);
+    }
+
+    .requests-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        overflow-y: auto;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .request-card {
+        flex: 1 1 calc(33.333% - 20px);
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .request-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .request-card h3 {
+        font-size: 1.2em;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .request-card p {
+        font-size: 0.9em;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    .request-card button {
+        padding: 6px 12px;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        background-color: #28a745;
+        align-self: flex-end;
+    }
+
+    .request-card button.accept {
+        color: white;
+    }
+
+    .request-card button.accept:hover {
+        background-color: #218838;
+    }
+</style>
+
+<div class="main-container">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Top Logo" />
+            <a href="/home">BookTech Digital</a>
+        </div>
+        <span>Logged in as: Student</span>
+    </div>
+
+    <!-- Page Container -->
+    <div class="page_container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div>
+                <a href="/home">
+                    <img src="images/logo.png" alt="Logo" />
+                </a>
+                <a href="/catalog-student">Catalog</a>
+                <a class="active" href="/requests-student">Requests</a>
+                <a href="/users-student">Users</a>
+                <a href="#">Challan</a>
+                <a href="#">Reviews</a>
+            </div>
+            <div class="logout" @onclick="Logout">
+                <span>Log Out</span>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- Hero Section -->
+            <div class="hero">
+                <h1>Borrowing Requests</h1>
+                <p>Review all incoming book borrowing requests. Accept or decline as needed.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="pending" @onclick="ShowPendingRequests">Pending</button>
+                <button class="accepted" @onclick="ShowAcceptedRequests">Accepted</button>
+            </div>
+
+            <!-- Requests Container -->
+            <div class="requests-container">
+                @if (filteredRequests != null && filteredRequests.Any())
+                {
+                    @foreach (var req in filteredRequests)
+                    {
+                        <div class="request-card">
+                            <h3>Book: @req.BookName</h3> <!-- Display BookName instead of BookId -->
+                            <p><strong>User:</strong> @req.Email</p>
+                            <p><strong>Status:</strong> @(req.Accepted ? "Accepted" : "Pending")</p>
+                            @if (!req.Accepted)
+                            {
+                                <button class="accept" @onclick="() => AcceptRequest(req)">Accept</button>
+                            }
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No requests found.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<RequestModel> requests = new List<RequestModel>();
+    private List<RequestModel> filteredRequests = new List<RequestModel>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadRequests();
+        ShowPendingRequests(); // Show only pending requests by default
+    }
+
+    private async Task LoadRequests()
+    {
+        requests = await Http.GetFromJsonAsync<List<RequestModel>>("http://localhost:5000/requests") 
+                   ?? new List<RequestModel>();
+    }
+
+    private void ShowPendingRequests()
+    {
+        filteredRequests = requests.Where(r => !r.Accepted).ToList();
+    }
+
+    private void ShowAcceptedRequests()
+    {
+        filteredRequests = requests.Where(r => r.Accepted).ToList();
+    }
+
+    private async Task AcceptRequest(RequestModel req)
+    {
+        // Update the request (mark as accepted)
+        req.Accepted = true;
+        var response = await Http.PutAsJsonAsync($"http://localhost:5000/requests/{req.requestId}", req);
+        if (response.IsSuccessStatusCode)
+        {
+            await JSRuntime.InvokeVoidAsync("alert", "Request accepted!");
+            await LoadRequests();
+            ShowPendingRequests(); // Refresh the filtered list
+        }
+        else
+        {
+            await JSRuntime.InvokeVoidAsync("alert", "Failed to accept request.");
+        }
+    }
+
+    public class RequestModel
+    {
+        public int requestId { get; set; }
+        public int BookId { get; set; }
+        public string BookName { get; set; } = string.Empty; // Added BookName property
+        public string Email { get; set; } = string.Empty;
+        public bool Accepted { get; set; }
+    }
+
+    private void Logout()
+    {
+        NavigationManager.NavigateTo("/login");
+    }
+}

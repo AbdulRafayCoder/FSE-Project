@@ -180,7 +180,8 @@ C:\Users\madha\source\repos\FSE-Project\BlazorApp\bin\Debug\net9.0\Microsoft.Ext
 C:\Users\madha\source\repos\FSE-Project\BlazorApp\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\madha\source\repos\FSE-Project\BlazorApp\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
 C:\Users\madha\source\repos\FSE-Project\BlazorApp\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
-C:\Users\madha\source\repos\FSE-Project\BlazorApp\obj\Debug\net9.0\compressed\3kv8flzgw3-o2wlpouf80.gz
-C:\Users\madha\source\repos\FSE-Project\BlazorApp\obj\Debug\net9.0\compressed\dwck7ctys4-10uzszoped.gz
-C:\Users\madha\source\repos\FSE-Project\BlazorApp\obj\Debug\net9.0\compressed\bj8hnby9lx-l5877nzu3a.gz
-C:\Users\madha\source\repos\FSE-Project\BlazorApp\obj\Debug\net9.0\compressed\r1im0su65m-3avojwphdg.gz
+C:\Users\madha\source\repos\FSE-Project\BlazorApp\obj\Debug\net9.0\BlazorApp.sourcelink.json
+C:\Users\madha\source\repos\FSE-Project\BlazorApp\obj\Debug\net9.0\compressed\3kv8flzgw3-etnb7xlipe.gz
+C:\Users\madha\source\repos\FSE-Project\BlazorApp\obj\Debug\net9.0\compressed\dwck7ctys4-sjnzgf7e1h.gz
+C:\Users\madha\source\repos\FSE-Project\BlazorApp\obj\Debug\net9.0\compressed\bj8hnby9lx-psxpu4y82n.gz
+C:\Users\madha\source\repos\FSE-Project\BlazorApp\obj\Debug\net9.0\compressed\r1im0su65m-jcs7p5hiro.gz
