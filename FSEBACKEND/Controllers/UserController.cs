@@ -34,6 +34,11 @@ namespace FSEBACKEND.Controllers
                 return BadRequest("Email and password are required.");
             }
 
+            if (_context.Users.Any(u => u.Email == newUser.Email))
+            {
+                return BadRequest("A user with this email already exists.");
+            }
+
             var user = new User(newUser.Email, newUser.Password, "Student");
             _context.Users.Add(user);
             _context.SaveChanges();

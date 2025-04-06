@@ -5,6 +5,7 @@
 @using Microsoft.AspNetCore.Components
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
+@inject BlazorApp.Services.UserState UserState
 
 <style>
     .login-container {
@@ -195,6 +196,9 @@
 
         if (result.Status)
         {
+            // Set the logged-in user in the global state
+            UserState.SetUser(result.Email, result.Role);
+
             // Redirect based on user role
             if (result.Role == "admin")
             {
@@ -213,6 +217,7 @@
 
     private void NavigateToIndex()
     {
+        UserState.ClearUser();
         NavigationManager.NavigateTo("/");
     }
 
