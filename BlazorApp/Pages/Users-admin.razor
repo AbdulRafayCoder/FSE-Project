@@ -167,26 +167,39 @@
         line-height: 1.6;
     }
 
-    /* Add User Form Container */
-    .add-user-container {
+    .forms-container {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        overflow-y: auto; /* Make requests section scrollable */
+        overflow-x: hidden;
+        padding: 10px;
+        height: calc(100% - 140px); /* Adjust height so it ends above any fixed elements */
+        margin-bottom: 20px; /* Space above any fixed elements */
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle inner shadow for distinction */
+        justify-content: center; /* Center forms horizontally */
+        align-items: center; /* Center forms vertically */
+    }
+
+    .form-container {
         background-color: white;
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         max-width: 400px;
-        margin: 40px auto; /* Centered horizontally with some top margin */
         text-align: center;
     }
 
-    .add-user-container h1 {
-        font-size: 2.5em;
+    .form-container h1 {
+        font-size: 1.5em; /* Match requests card title size */
         margin-bottom: 20px;
         color: #333;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
-    .add-user-container input {
+    .form-container input {
         width: 100%;
         padding: 10px;
         font-size: 1em;
@@ -197,7 +210,7 @@
         text-shadow: none; /* Remove shadows from input text */
     }
 
-    .add-user-container button {
+    .form-container button {
         width: 100%; /* Stretch button to match container width */
         padding: 10px;
         font-size: 1em;
@@ -211,9 +224,46 @@
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
-    .add-user-container button:hover {
+    .form-container button:hover {
         transform: scale(1.05);
         background-color: #218838; /* Darker green on hover */
+    }
+
+    .filter-buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .filter-buttons button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+        width: 140px; /* Ensures all buttons are the same size */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .filter-buttons button.add-user {
+        background: linear-gradient(135deg, #28a745, #218838); /* Green gradient */
+        color: white;
+    }
+
+    .filter-buttons button.add-user:hover {
+        transform: scale(1.05);
+    }
+
+    .filter-buttons button.delete-user {
+        background: linear-gradient(135deg, #dc3545, #c82333); /* Red gradient */
+        color: white;
+    }
+
+    .filter-buttons button.delete-user:hover {
+        transform: scale(1.05);
     }
 </style>
 
@@ -222,7 +272,7 @@
     <div class="top-bar">
         <div class="logo-container">
             <img src="images/logo.png" alt="Top Logo" />
-            <a href="/home">BookTech Digital</a>
+            <a href="/home-admin">BookTech Digital</a>
         </div>
         <span>Logged in as: Admin</span>
     </div>
@@ -233,13 +283,13 @@
         <div class="sidebar">
             <div>
                 <a href="/home-admin">
-                    <img src="images/logo.png" alt="Logo" />
+                    <img src="images/logo.png" alt="Logo" />s
                 </a>
                 <a href="/catalog-admin">Catalog</a>
                 <a href="/requests-admin">Requests</a>
-                <a class="active" href="/users-admin">Users</a>
-                <a href="#">Challan</a>
-                <a href="#">Reviews</a>
+                <a href="/users-admin">Users</a>
+                <a href="/challan-admin">Challan</a>
+                <a href="/review-admin">Reviews</a>
             </div>
             <div class="logout" @onclick="Logout">
                 <span>Log Out</span>
@@ -253,12 +303,32 @@
                 <h1>User Management</h1>
                 <p>Manage user accounts, add new users, and oversee user roles in the system.</p>
             </div>
-            <!-- Add User Form Container -->
-            <div class="add-user-container">
-                <h1>Add User</h1>
-                <input placeholder="Email" @bind="newUserEmail" />
-                <input type="password" placeholder="Password" @bind="newUserPassword" />
-                <button @onclick="AddUser">Add</button>
+
+            <!-- Toggle Buttons -->
+            <div class="filter-buttons">
+                <button class="add-user" @onclick="ShowAddUserForm">Add User</button>
+                <button class="delete-user" @onclick="ShowDeleteUserForm">Delete User</button>
+            </div>
+
+            <!-- Forms Container -->
+            <div class="forms-container">
+                @if (showAddUserForm)
+                {
+                    <div class="form-container">
+                        <h1>Add User</h1>
+                        <input placeholder="Email" @bind="newUserEmail" />
+                        <input type="password" placeholder="Password" @bind="newUserPassword" />
+                        <button @onclick="AddUser">Add</button>
+                    </div>
+                }
+                else if (showDeleteUserForm)
+                {
+                    <div class="form-container">
+                        <h1>Delete User</h1>
+                        <input placeholder="Email" @bind="deleteUserEmail" />
+                        <button @onclick="DeleteUser">Delete</button>
+                    </div>
+                }
             </div>
         </div>
     </div>
@@ -267,6 +337,21 @@
 @code {
     private string newUserEmail = "";
     private string newUserPassword = "";
+    private string deleteUserEmail = "";
+    private bool showAddUserForm = true;
+    private bool showDeleteUserForm = false;
+
+    private void ShowAddUserForm()
+    {
+        showAddUserForm = true;
+        showDeleteUserForm = false;
+    }
+
+    private void ShowDeleteUserForm()
+    {
+        showAddUserForm = false;
+        showDeleteUserForm = true;
+    }
 
     private async Task AddUser()
     {
@@ -287,6 +372,19 @@
         else
         {
             await JSRuntime.InvokeVoidAsync("alert", "Please fill out all fields correctly.");
+        }
+    }
+
+    private async Task DeleteUser()
+    {
+        var response = await Http.DeleteAsync($"http://localhost:5000/users/{deleteUserEmail}");
+        if (response.IsSuccessStatusCode)
+        {
+            await JSRuntime.InvokeVoidAsync("alert", "User deleted successfully!");
+        }
+        else
+        {
+            await JSRuntime.InvokeVoidAsync("alert", "Failed to delete user.");
         }
     }
 

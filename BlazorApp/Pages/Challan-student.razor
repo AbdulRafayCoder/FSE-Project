@@ -1,0 +1,443 @@
+@page "/challan-student"
+@using FSEBACKEND.Models
+@using Microsoft.AspNetCore.Components
+@using System.Net.Http.Json
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+@inject BlazorApp.Services.UserState UserState
+@inject IJSRuntime JS
+@inject BlazorApp.Services.UserState UserState
+
+<style>
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        box-sizing: border-box;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+    }
+
+    .top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #1d1d1d;
+        color: white;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .top-bar .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .top-bar .logo-container img {
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    .top-bar .logo-container a {
+        font-size: 1.7em;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+        transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .top-bar .logo-container a:hover {
+        transform: scale(1.05);
+        color: #ddd;
+    }
+
+    .top-bar span {
+        font-size: 1em;
+        color: #ddd;
+        font-weight: bold;
+    }
+
+    .page_container {
+        display: flex;
+        flex: 1;
+        background: white;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .sidebar {
+        flex: 1;
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .sidebar img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .sidebar a {
+        color: black;
+        margin: 15px 0;
+        font-size: 1.2em;
+        display: block;
+        text-align: center;
+        padding: 10px;
+        background-color: white;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .sidebar a:hover {
+        text-decoration: none;
+        transform: scale(1.05);
+        background-color: #f0f0f0;
+    }
+
+    .sidebar a.active {
+        background-color: #ddd;
+    }
+
+    .sidebar .logout {
+        color: black;
+        font-size: 1.2em;
+        text-align: center;
+        padding: 10px;
+        background-color: white;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .sidebar .logout:hover {
+        text-decoration: none;
+        transform: scale(1.05);
+        background-color: #f0f0f0;
+    }
+
+    .content-area {
+        flex: 7;
+        padding: 20px;
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #4b79a1, #283e51);
+        color: white;
+        padding: 40px 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+        line-height: 1.6;
+    }
+
+    .filter-buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .filter-buttons button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+        width: 120px; /* Ensures all buttons are the same size */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .filter-buttons button.pending {
+        background: linear-gradient(135deg, #ffc107, #e0a800);
+        color: white;
+    }
+
+    .filter-buttons button.pending:hover {
+        transform: scale(1.05);
+    }
+
+    .filter-buttons button.accepted {
+        background: linear-gradient(135deg, #28a745, #218838);
+        color: white;
+    }
+
+    .filter-buttons button.accepted:hover {
+        transform: scale(1.05);
+    }
+
+    ..requests-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;  /* Horizontal scroll enabled */
+    overflow-y: hidden;
+    padding: 10px;
+    height: auto;
+    margin-bottom: 20px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+    .request-card {
+        flex: 0 0 300px;
+        flex: 1 1 calc(25% - 20px); /* Match catalog card width */
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 25px; /* Match catalog card padding */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        animation: fadeIn 0.5s ease-in-out;
+        max-height: 300px; /* Limit the maximum height of the card */
+        overflow: hidden; /* Hide overflow content */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Ensure button is near the bottom */
+    }
+
+    .request-card:hover {
+        transform: scale(1.03); /* Match catalog card hover effect */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .request-card h3 {
+        font-size: 1.5em; /* Match catalog card title size */
+        color: #333;
+        margin-bottom: 10px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .request-card p {
+        font-size: 1em; /* Match catalog card text size */
+        color: #555;
+        margin-bottom: 10px;
+        text-shadow: none; /* Remove shadows from paragraph text */
+    }
+
+    .request-card button {
+        width: 100%; /* Stretch button to match card width */
+        padding: 10px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        background-color: #28a745; /* Standardize to green */
+        color: white;
+        cursor: pointer;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        margin-top: auto; /* Push the button to the bottom */
+    }
+
+    .request-card button:hover {
+        transform: scale(1.05);
+        background-color: #218838; /* Darker green on hover */
+    }
+
+    .request-card button.pending-display {
+        width: 100%; /* Stretch button to match card width */
+        padding: 10px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        background-color: #ffc107; /* Yellow color for pending */
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .request-card button.return-display {
+        width: 100%; /* Stretch button to match card width */
+        padding: 10px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        background-color: red; /* Yellow color for pending */
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .request-card button.pending-display:hover {
+        transform: scale(1.05);
+        background-color: #e0a800; /* Darker yellow on hover */
+    }
+</style>
+
+<div class="main-container">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Top Logo" />
+            <a href="/home-student">BookTech Digital</a>
+        </div>
+        <span>Logged in as: Student</span>
+    </div>
+
+    <!-- Page Container -->
+    <div class="page_container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div>
+                <a href="/home-student">
+                    <img src="images/logo.png" alt="Logo" />
+                </a>
+                <a href="/catalog-student">Catalog</a>
+                <a href="/requests-student">Requests</a>
+                <a href="/user-student">User</a> 
+                <a href="/challan-student">Challan</a>
+                <a href="/student-review">Reviews</a>
+            </div>
+            <div class="logout" @onclick="Logout">
+                <span>Log Out</span>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content-area">
+        <div class="requests-container">
+    @if (isLoading)
+    {
+        <p>Loading challans...</p>
+    }
+    else if (challans == null || !challans.Any())
+    {
+        <p>No challans issued yet.</p>
+    }
+    else
+    {
+        @foreach (var challan in challans)
+        {
+            <div class="request-card">
+                <h3>Challan #@challan.ChallanId</h3>
+                <p><strong>Amount:</strong> ₹@challan.Amount</p>
+                <p><strong>Issued On:</strong> @challan.IssuedDate.ToString("dd MMM yyyy")</p>
+                <p><strong>Status:</strong> 
+                    @(challan.VerifiedByAdmin 
+                        ? "Verified"
+                        : challan.SubmittedByUser 
+                            ? "Submitted (Pending Admin)" 
+                            : "Pending Submission")
+                </p>
+
+                @if (!challan.SubmittedByUser)
+                {
+                    <button @onclick="() => SubmitChallan(challan.ChallanId)">Submit</button>
+                }
+
+                @if (challan.SubmittedByUser)
+                {
+                    @if (challan.VerifiedByAdmin)
+                    {
+                        
+                        <button>Verified</button>
+                    }
+                    else
+                    {
+                        <button class="pending-display" disabled>Pending Approval</button>
+                    }
+                }
+            </div>
+        }
+    }
+</div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    private List<ChallanModel> challans = new();
+    private bool isLoading = true;
+
+    private void Logout()
+    {
+        UserState.ClearUser();
+        NavigationManager.NavigateTo("/login");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var userId = UserState.Email; // or however you track the student
+            challans = await Http.GetFromJsonAsync<List<ChallanModel>>($"http://localhost:5000/challans/user/{userId}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error fetching challans: " + ex.Message);
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    public class ChallanModel
+    {
+        public int ChallanId { get; set; }
+        public int LendId { get; set; }
+        public decimal Amount { get; set; }
+        public DateTime IssuedDate { get; set; }
+        public bool SubmittedByUser { get; set; }
+        public bool VerifiedByAdmin { get; set; }
+    }
+
+    private async Task SubmitChallan(int challanId)
+    {
+        var response = await Http.PostAsJsonAsync($"http://localhost:5000/challans/submit/{challanId}", new { });
+
+        if (response.IsSuccessStatusCode)
+        {
+            var challan = challans.FirstOrDefault(c => c.ChallanId == challanId);
+            if (challan != null)
+            {
+                challan.SubmittedByUser = true;
+            }
+
+            await JSRuntime.InvokeVoidAsync("alert", "Challan submitted successfully.");
+        }
+        else
+        {
+            await JSRuntime.InvokeVoidAsync("alert", "Failed to submit challan.");
+        }
+    }
+
+}

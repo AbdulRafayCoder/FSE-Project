@@ -237,25 +237,32 @@
         background-color: #218838; /* Darker green on hover */
     }
 
-    /* Add Book Button (fixed at bottom center) */
-    .add-book-btn {
-        position: absolute;
-        bottom: 20px;
-        align-self: center;
+    .filter-buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .filter-buttons button {
         padding: 10px 20px;
+        margin: 0 10px;
         font-size: 1em;
         border: none;
         border-radius: 5px;
-        background-color: #007bff;
-        color: white;
         cursor: pointer;
-        transition: transform 0.2s ease, background-color 0.2s ease;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+        width: 160px; /* Increased width by 20px */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
-    .add-book-btn:hover {
+    .filter-buttons button.manage-books {
+        background: linear-gradient(135deg, #007bff, #0056b3); /* Blue gradient */
+        color: white;
+    }
+
+    .filter-buttons button.manage-books:hover {
         transform: scale(1.05);
-        background-color: #0056b3;
     }
 </style>
 
@@ -264,7 +271,7 @@
     <div class="top-bar">
         <div class="logo-container">
             <img src="images/logo.png" alt="Top Logo" />
-            <a href="/home">BookTech Digital</a>
+            <a href="/home-admin">BookTech Digital</a>
         </div>
         <span>Logged in as: Admin</span>
     </div>
@@ -275,13 +282,13 @@
         <div class="sidebar">
             <div>
                 <a href="/home-admin">
-                    <img src="images/logo.png" alt="Logo" />
+                    <img src="images/logo.png" alt="Logo" />s
                 </a>
-                <a class="active" href="/catalog-admin">Catalog</a>
+                <a href="/catalog-admin">Catalog</a>
                 <a href="/requests-admin">Requests</a>
                 <a href="/users-admin">Users</a>
-                <a href="#">Challan</a>
-                <a href="#">Reviews</a>
+                <a href="/challan-admin">Challan</a>
+                <a href="/review-admin">Reviews</a>
             </div>
             <div class="logout" @onclick="Logout">
                 <span>Log Out</span>
@@ -293,8 +300,14 @@
             <!-- Hero Section -->
             <div class="hero">
                 <h1>Book Catalog</h1>
-                <p>Explore our collection. Request a book to borrow it or add a new one.</p>
+                <p>Explore our collection. Request a book to borrow it or manage books in the catalog.</p>
             </div>
+
+            <!-- Manage Books Button -->
+            <div class="filter-buttons">
+                <button class="manage-books" @onclick="GoToManageBooks">Manage Books</button>
+            </div>
+
             <!-- Books Listing -->
             <div class="features">
                 @if (books is not null && books.Any())
@@ -314,26 +327,23 @@
                     <p>No books found.</p>
                 }
             </div>
-            <!-- Add Book Button -->
-            <button class="add-book-btn" @onclick="GoToAddBook">Add Book</button>
         </div>
     </div>
 </div>
 
 @code {
     private List<Book> books = new List<Book>();
-    private string currentUserEmail = "test@example.com";
+    private string currentUserEmail = string.Empty; // Initialize as an empty string
 
     protected override async Task OnInitializedAsync()
     {
+        currentUserEmail = UserState.Email ?? "unknown@example.com"; // Initialize here
         books = await Http.GetFromJsonAsync<List<Book>>("http://localhost:5000/books") ?? new List<Book>();
     }
 
     private async Task RequestBook(Book book)
     {
-        var request = new Request(book.Id.ToString(), currentUserEmail, false);
-
-        // Use the corrected endpoint = "/addrequest"
+        var request = new Request(book.Id.ToString(), currentUserEmail, false); // Use initialized value
         var response = await Http.PostAsJsonAsync("http://localhost:5000/addrequest", request);
         if (response.IsSuccessStatusCode)
         {
@@ -345,12 +355,12 @@
         }
     }
 
-    public record Request(string BookId, string Email, bool Accepted);
-
-    private void GoToAddBook()
+    private void GoToManageBooks()
     {
-        NavigationManager.NavigateTo("/catalog-addbook");
+        NavigationManager.NavigateTo("/catalog-bookmanagement");
     }
+
+    public record Request(string BookId, string Email, bool Accepted);
 
     private void Logout()
     {

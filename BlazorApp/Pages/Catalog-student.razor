@@ -237,25 +237,23 @@
         background-color: #218838; /* Darker green on hover */
     }
 
-    /* Add Book Button (fixed at bottom center) */
-    .add-book-btn {
-        position: absolute;
-        bottom: 20px;
-        align-self: center;
+    .filter-buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .filter-buttons button {
         padding: 10px 20px;
+        margin: 0 10px;
         font-size: 1em;
         border: none;
         border-radius: 5px;
-        background-color: #007bff;
-        color: white;
         cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+        width: 140px; /* Ensures all buttons are the same size */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        transition: transform 0.2s ease, background-color 0.2s ease;
-    }
-
-    .add-book-btn:hover {
-        transform: scale(1.05);
-        background-color: #0056b3;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 </style>
 
@@ -264,7 +262,7 @@
     <div class="top-bar">
         <div class="logo-container">
             <img src="images/logo.png" alt="Top Logo" />
-            <a href="/home">BookTech Digital</a>
+            <a href="/home-student">BookTech Digital</a>
         </div>
         <span>Logged in as: Student</span>
     </div>
@@ -277,11 +275,11 @@
                 <a href="/home-student">
                     <img src="images/logo.png" alt="Logo" />
                 </a>
-                <a class="active" href="/catalog-student">Catalog</a>
+                <a href="/catalog-student">Catalog</a>
                 <a href="/requests-student">Requests</a>
-                <a href="/users-student">Users</a>
-                <a href="#">Challan</a>
-                <a href="#">Reviews</a>
+                <a href="/user-student">User</a> 
+                <a href="/challan-student">Challan</a>
+                <a href="/student-review">Reviews</a>
             </div>
             <div class="logout" @onclick="Logout">
                 <span>Log Out</span>
@@ -293,8 +291,9 @@
             <!-- Hero Section -->
             <div class="hero">
                 <h1>Book Catalog</h1>
-                <p>Explore our collection. Request a book to borrow it or add a new one.</p>
+                <p>Explore our collection. Request a book to borrow it.</p>
             </div>
+
             <!-- Books Listing -->
             <div class="features">
                 @if (books is not null && books.Any())
@@ -314,26 +313,23 @@
                     <p>No books found.</p>
                 }
             </div>
-            <!-- Add Book Button -->
-            <button class="add-book-btn" @onclick="GoToAddBook">Add Book</button>
         </div>
     </div>
 </div>
 
 @code {
     private List<Book> books = new List<Book>();
-    private string currentUserEmail = "test@example.com";
+    private string currentUserEmail = string.Empty; // Initialize as an empty string
 
     protected override async Task OnInitializedAsync()
     {
+        currentUserEmail = UserState.Email ?? "unknown@example.com"; // Initialize here
         books = await Http.GetFromJsonAsync<List<Book>>("http://localhost:5000/books") ?? new List<Book>();
     }
 
     private async Task RequestBook(Book book)
     {
-        var request = new Request(book.Id.ToString(), currentUserEmail, false);
-
-        // Use the corrected endpoint = "/addrequest"
+        var request = new Request(book.Id.ToString(), currentUserEmail, false); // Use initialized value
         var response = await Http.PostAsJsonAsync("http://localhost:5000/addrequest", request);
         if (response.IsSuccessStatusCode)
         {
@@ -346,11 +342,6 @@
     }
 
     public record Request(string BookId, string Email, bool Accepted);
-
-    private void GoToAddBook()
-    {
-        NavigationManager.NavigateTo("/catalog-addbook");
-    }
 
     private void Logout()
     {

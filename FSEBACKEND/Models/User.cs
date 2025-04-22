@@ -1,3 +1,5 @@
+using System;
+using FSEBACKEND.Models;
 namespace FSEBACKEND.Models
 {
     public class User

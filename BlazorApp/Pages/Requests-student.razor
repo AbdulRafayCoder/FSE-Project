@@ -6,6 +6,7 @@
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JSRuntime
 @inject BlazorApp.Services.UserState UserState
+@inject IJSRuntime JS
 
 <style>
     .main-container {
@@ -181,7 +182,7 @@
 
     .filter-buttons button.pending {
         background: linear-gradient(135deg, #ffc107, #e0a800);
-        color: black;
+        color: white;
     }
 
     .filter-buttons button.pending:hover {
@@ -197,20 +198,23 @@
         transform: scale(1.05);
     }
 
-    .requests-container {
-        flex: 1;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        overflow-y: auto; /* Make requests section scrollable */
-        overflow-x: hidden;
-        padding: 10px;
-        height: calc(100% - 140px); /* Adjust height so it ends above any fixed elements */
-        margin-bottom: 20px; /* Space above any fixed elements */
-        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle inner shadow for distinction */
-    }
+    ..requests-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;  /* Horizontal scroll enabled */
+    overflow-y: hidden;
+    padding: 10px;
+    height: auto;
+    margin-bottom: 20px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 
     .request-card {
+        flex: 0 0 300px;
         flex: 1 1 calc(25% - 20px); /* Match catalog card width */
         background-color: white;
         border: 1px solid #ddd;
@@ -265,6 +269,35 @@
         transform: scale(1.05);
         background-color: #218838; /* Darker green on hover */
     }
+
+    .request-card button.pending-display {
+        width: 100%; /* Stretch button to match card width */
+        padding: 10px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        background-color: #ffc107; /* Yellow color for pending */
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .request-card button.return-display {
+        width: 100%; /* Stretch button to match card width */
+        padding: 10px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        background-color: red; /* Yellow color for pending */
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .request-card button.pending-display:hover {
+        transform: scale(1.05);
+        background-color: #e0a800; /* Darker yellow on hover */
+    }
 </style>
 
 <div class="main-container">
@@ -272,7 +305,7 @@
     <div class="top-bar">
         <div class="logo-container">
             <img src="images/logo.png" alt="Top Logo" />
-            <a href="/home">BookTech Digital</a>
+            <a href="/home-student">BookTech Digital</a>
         </div>
         <span>Logged in as: Student</span>
     </div>
@@ -286,10 +319,10 @@
                     <img src="images/logo.png" alt="Logo" />
                 </a>
                 <a href="/catalog-student">Catalog</a>
-                <a class="active" href="/requests-student">Requests</a>
-                <a href="/users-student">Users</a>
-                <a href="#">Challan</a>
-                <a href="#">Reviews</a>
+                <a href="/requests-student">Requests</a>
+                <a href="/user-student">User</a> 
+                <a href="/challan-student">Challan</a>
+                <a href="/student-review">Reviews</a>
             </div>
             <div class="logout" @onclick="Logout">
                 <span>Log Out</span>
@@ -301,7 +334,7 @@
             <!-- Hero Section -->
             <div class="hero">
                 <h1>Borrowing Requests</h1>
-                <p>Review all incoming book borrowing requests. Accept or decline as needed.</p>
+                <p>Review all incoming book borrowing requests.</p>
             </div>
 
             <!-- Filter Buttons -->
@@ -316,13 +349,18 @@
                 {
                     @foreach (var req in filteredRequests)
                     {
+                        @if(!req.Accepted){
+
+                        }
                         <div class="request-card">
                             <h3>Book: @req.BookName</h3> <!-- Display BookName instead of BookId -->
-                            <p><strong>User:</strong> @req.Email</p>
+                            <p><strong>User:</strong> @req.UserEmail</p> <!-- Fixed to display UserEmail -->
                             <p><strong>Status:</strong> @(req.Accepted ? "Accepted" : "Pending")</p>
                             @if (!req.Accepted)
                             {
-                                <button class="accept" @onclick="() => AcceptRequest(req)">Accept</button>
+                                <button class="pending-display">Pending</button> <!-- Updated button -->
+                            }else{
+                                <button class="return-display" @onclick="() => ReturnBook(req.requestId)">Return</button>
                             }
                         </div>
                     }
@@ -348,7 +386,7 @@
 
     private async Task LoadRequests()
     {
-        requests = await Http.GetFromJsonAsync<List<RequestModel>>("http://localhost:5000/requests") 
+        requests = await Http.GetFromJsonAsync<List<RequestModel>>($"http://localhost:5000/requests/{UserState.Email}") 
                    ?? new List<RequestModel>();
     }
 
@@ -362,31 +400,28 @@
         filteredRequests = requests.Where(r => r.Accepted).ToList();
     }
 
-    private async Task AcceptRequest(RequestModel req)
-    {
-        // Update the request (mark as accepted)
-        req.Accepted = true;
-        var response = await Http.PutAsJsonAsync($"http://localhost:5000/requests/{req.requestId}", req);
-        if (response.IsSuccessStatusCode)
-        {
-            await JSRuntime.InvokeVoidAsync("alert", "Request accepted!");
-            await LoadRequests();
-            ShowPendingRequests(); // Refresh the filtered list
-        }
-        else
-        {
-            await JSRuntime.InvokeVoidAsync("alert", "Failed to accept request.");
-        }
-    }
-
     public class RequestModel
     {
         public int requestId { get; set; }
         public int BookId { get; set; }
         public string BookName { get; set; } = string.Empty; // Added BookName property
-        public string Email { get; set; } = string.Empty;
+        public string UserEmail { get; set; } = string.Empty; // Ensure UserEmail is used
         public bool Accepted { get; set; }
     }
+
+    private async Task ReturnBook(int requestId)
+{
+    var response = await Http.PutAsJsonAsync($"http://localhost:5000/lend/return/{requestId}", (object)null);
+
+    if (response.IsSuccessStatusCode)
+    {
+        await JS.InvokeVoidAsync("alert", "Book has been returned successfully!");
+    }
+    else
+    {
+        await JS.InvokeVoidAsync("alert", "Failed to return the book.");
+    }
+}
 
     private void Logout()
     {

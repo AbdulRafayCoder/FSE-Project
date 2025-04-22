@@ -1,14 +1,14 @@
-@page "/users-student"
+@page "/user-student"
 @using FSEBACKEND.Models
 @using Microsoft.AspNetCore.Components
 @using System.Net.Http.Json
-@inject NavigationManager NavigationManager
 @inject HttpClient Http
+@inject NavigationManager NavigationManager
 @inject IJSRuntime JSRuntime
 @inject BlazorApp.Services.UserState UserState
+@inject IJSRuntime JS
 
 <style>
-    /* Main container for the entire page */
     .main-container {
         display: flex;
         flex-direction: column;
@@ -18,12 +18,11 @@
         font-family: Arial, sans-serif;
     }
 
-    /* Top Bar (Header) */
     .top-bar {
         display: flex;
         align-items: center;
-        justify-content: space-between; /* Space between logo and user info */
-        background-color: #1d1d1d; /* Dark gray */
+        justify-content: space-between;
+        background-color: #1d1d1d;
         color: white;
         padding: 10px 20px;
         box-sizing: border-box;
@@ -37,7 +36,6 @@
 
     .top-bar .logo-container img {
         height: 30px;
-        width: auto;
         margin-right: 10px;
     }
 
@@ -60,7 +58,6 @@
         font-weight: bold;
     }
 
-    /* Page Container */
     .page_container {
         display: flex;
         flex: 1;
@@ -69,7 +66,6 @@
         overflow: hidden;
     }
 
-    /* Sidebar */
     .sidebar {
         flex: 1;
         background-color: black;
@@ -133,7 +129,6 @@
         background-color: #f0f0f0;
     }
 
-    /* Content Area */
     .content-area {
         flex: 7;
         padding: 20px;
@@ -145,7 +140,6 @@
         position: relative;
     }
 
-    /* Hero Section */
     .hero {
         background: linear-gradient(135deg, #4b79a1, #283e51);
         color: white;
@@ -167,38 +161,97 @@
         line-height: 1.6;
     }
 
-    /* Add User Form Container */
-    .add-user-container {
-        background-color: white;
-        padding: 20px;
-        border-radius: 8px;
+    .filter-buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .filter-buttons button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+        width: 120px; /* Ensures all buttons are the same size */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        max-width: 400px;
-        margin: 40px auto; /* Centered horizontally with some top margin */
-        text-align: center;
     }
 
-    .add-user-container h1 {
-        font-size: 2.5em;
-        margin-bottom: 20px;
+    .filter-buttons button.pending {
+        background: linear-gradient(135deg, #ffc107, #e0a800);
+        color: white;
+    }
+
+    .filter-buttons button.pending:hover {
+        transform: scale(1.05);
+    }
+
+    .filter-buttons button.accepted {
+        background: linear-gradient(135deg, #28a745, #218838);
+        color: white;
+    }
+
+    .filter-buttons button.accepted:hover {
+        transform: scale(1.05);
+    }
+
+    ..requests-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;  /* Horizontal scroll enabled */
+    overflow-y: hidden;
+    padding: 10px;
+    height: auto;
+    margin-bottom: 20px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+    .request-card {
+        flex: 0 0 300px;
+        flex: 1 1 calc(25% - 20px); /* Match catalog card width */
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 25px; /* Match catalog card padding */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        animation: fadeIn 0.5s ease-in-out;
+        max-height: 300px; /* Limit the maximum height of the card */
+        overflow: hidden; /* Hide overflow content */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Ensure button is near the bottom */
+    }
+
+    .request-card:hover {
+        transform: scale(1.03); /* Match catalog card hover effect */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .request-card h3 {
+        font-size: 1.5em; /* Match catalog card title size */
         color: #333;
+        margin-bottom: 10px;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
-    .add-user-container input {
-        width: 100%;
-        padding: 10px;
-        font-size: 1em;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin-bottom: 15px;
-        box-sizing: border-box;
-        text-shadow: none; /* Remove shadows from input text */
+    .request-card p {
+        font-size: 1em; /* Match catalog card text size */
+        color: #555;
+        margin-bottom: 10px;
+        text-shadow: none; /* Remove shadows from paragraph text */
     }
 
-    .add-user-container button {
-        width: 100%; /* Stretch button to match container width */
+    .request-card button {
+        width: 100%; /* Stretch button to match card width */
         padding: 10px;
         font-size: 1em;
         border: none;
@@ -209,11 +262,41 @@
         transition: transform 0.2s ease, background-color 0.2s ease;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        margin-top: auto; /* Push the button to the bottom */
     }
 
-    .add-user-container button:hover {
+    .request-card button:hover {
         transform: scale(1.05);
         background-color: #218838; /* Darker green on hover */
+    }
+
+    .request-card button.pending-display {
+        width: 100%; /* Stretch button to match card width */
+        padding: 10px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        background-color: #ffc107; /* Yellow color for pending */
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .request-card button.return-display {
+        width: 100%; /* Stretch button to match card width */
+        padding: 10px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        background-color: red; /* Yellow color for pending */
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .request-card button.pending-display:hover {
+        transform: scale(1.05);
+        background-color: #e0a800; /* Darker yellow on hover */
     }
 </style>
 
@@ -222,7 +305,7 @@
     <div class="top-bar">
         <div class="logo-container">
             <img src="images/logo.png" alt="Top Logo" />
-            <a href="/home">BookTech Digital</a>
+            <a href="/home-student">BookTech Digital</a>
         </div>
         <span>Logged in as: Student</span>
     </div>
@@ -237,9 +320,9 @@
                 </a>
                 <a href="/catalog-student">Catalog</a>
                 <a href="/requests-student">Requests</a>
-                <a class="active" href="/users-student">Users</a>
-                <a href="#">Challan</a>
-                <a href="#">Reviews</a>
+                <a href="/user-student">User</a> 
+                <a href="/challan-student">Challan</a>
+                <a href="/student-review">Reviews</a>
             </div>
             <div class="logout" @onclick="Logout">
                 <span>Log Out</span>
@@ -248,55 +331,16 @@
 
         <!-- Content Area -->
         <div class="content-area">
-            <!-- Hero Section -->
-            <div class="hero">
-                <h1>User Management</h1>
-                <p>Manage user accounts, add new users, and oversee user roles in the system.</p>
-            </div>
-            <!-- Add User Form Container -->
-            <div class="add-user-container">
-                <h1>Add User</h1>
-                <input placeholder="Email" @bind="newUserEmail" />
-                <input type="password" placeholder="Password" @bind="newUserPassword" />
-                <button @onclick="AddUser">Add</button>
-            </div>
         </div>
     </div>
 </div>
 
 @code {
-    private string newUserEmail = "";
-    private string newUserPassword = "";
-
-    private async Task AddUser()
-    {
-        var addUserRequest = new AddUserRequest(newUserEmail, newUserPassword);
-        var response = await Http.PostAsJsonAsync("http://localhost:5000/adduser", addUserRequest);
-        if (response.IsSuccessStatusCode)
-        {
-            var result = await response.Content.ReadFromJsonAsync<AddUserResponse>();
-            if (result != null && result.Status == "User added")
-            {
-                await JSRuntime.InvokeVoidAsync("alert", "User added successfully!");
-            }
-            else
-            {
-                await JSRuntime.InvokeVoidAsync("alert", "Failed to add user.");
-            }
-        }
-        else
-        {
-            await JSRuntime.InvokeVoidAsync("alert", "Please fill out all fields correctly.");
-        }
-    }
-
-    public record AddUserRequest(string Email, string Password);
-    public record AddUserResponse(string Status, User? User);
-    public record User(string Email, string Password, string Role);
-
+    
     private void Logout()
     {
         UserState.ClearUser();
         NavigationManager.NavigateTo("/login");
     }
+
 }

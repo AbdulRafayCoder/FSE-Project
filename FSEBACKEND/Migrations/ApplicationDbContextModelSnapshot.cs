@@ -17,6 +17,34 @@ namespace FSEBACKEND.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.2");
 
+            modelBuilder.Entity("Challan", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("IssuedDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("LendId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("SubmittedByUser")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("VerifiedByAdmin")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LendId");
+
+                    b.ToTable("Challans");
+                });
+
             modelBuilder.Entity("FSEBACKEND.Models.Book", b =>
                 {
                     b.Property<int>("Id")
@@ -52,6 +80,9 @@ namespace FSEBACKEND.Migrations
                     b.Property<DateTime?>("EndDate")
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("IsReturned")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("RequestId")
                         .HasColumnType("INTEGER");
 
@@ -59,6 +90,8 @@ namespace FSEBACKEND.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("RequestId");
 
                     b.ToTable("Lends");
                 });
@@ -84,6 +117,40 @@ namespace FSEBACKEND.Migrations
                     b.ToTable("Requests");
                 });
 
+            modelBuilder.Entity("FSEBACKEND.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("LendId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserEmail")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.ToTable("Reviews");
+                });
+
             modelBuilder.Entity("FSEBACKEND.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -105,6 +172,39 @@ namespace FSEBACKEND.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Challan", b =>
+                {
+                    b.HasOne("FSEBACKEND.Models.Lend", "Lend")
+                        .WithMany()
+                        .HasForeignKey("LendId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Lend");
+                });
+
+            modelBuilder.Entity("FSEBACKEND.Models.Lend", b =>
+                {
+                    b.HasOne("FSEBACKEND.Models.Request", "Request")
+                        .WithMany()
+                        .HasForeignKey("RequestId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Request");
+                });
+
+            modelBuilder.Entity("FSEBACKEND.Models.Review", b =>
+                {
+                    b.HasOne("FSEBACKEND.Models.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Book");
                 });
 #pragma warning restore 612, 618
         }

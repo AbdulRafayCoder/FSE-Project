@@ -181,7 +181,7 @@
 
     .filter-buttons button.pending {
         background: linear-gradient(135deg, #ffc107, #e0a800);
-        color: black;
+        color: white;
     }
 
     .filter-buttons button.pending:hover {
@@ -272,7 +272,7 @@
     <div class="top-bar">
         <div class="logo-container">
             <img src="images/logo.png" alt="Top Logo" />
-            <a href="/home">BookTech Digital</a>
+            <a href="/home-admin">BookTech Digital</a>
         </div>
         <span>Logged in as: Admin</span>
     </div>
@@ -283,13 +283,13 @@
         <div class="sidebar">
             <div>
                 <a href="/home-admin">
-                    <img src="images/logo.png" alt="Logo" />
+                    <img src="images/logo.png" alt="Logo" />s
                 </a>
                 <a href="/catalog-admin">Catalog</a>
-                <a class="active" href="/requests-admin">Requests</a>
+                <a href="/requests-admin">Requests</a>
                 <a href="/users-admin">Users</a>
-                <a href="#">Challan</a>
-                <a href="#">Reviews</a>
+                <a href="/challan-admin">Challan</a>
+                <a href="/review-admin">Reviews</a>
             </div>
             <div class="logout" @onclick="Logout">
                 <span>Log Out</span>
@@ -317,8 +317,8 @@
                     @foreach (var req in filteredRequests)
                     {
                         <div class="request-card">
-                            <h3>Book: @req.BookName</h3> <!-- Display BookName instead of BookId -->
-                            <p><strong>User:</strong> @req.Email</p>
+                            <h3>Book: @req.BookName</h3>
+                            <p><strong>User:</strong> @req.UserEmail</p> <!-- Fixed to display UserEmail -->
                             <p><strong>Status:</strong> @(req.Accepted ? "Accepted" : "Pending")</p>
                             @if (!req.Accepted)
                             {
@@ -384,7 +384,7 @@
         public int requestId { get; set; }
         public int BookId { get; set; }
         public string BookName { get; set; } = string.Empty; // Added BookName property
-        public string Email { get; set; } = string.Empty;
+        public string UserEmail { get; set; } = string.Empty; // Ensure UserEmail is used
         public bool Accepted { get; set; }
     }
 
