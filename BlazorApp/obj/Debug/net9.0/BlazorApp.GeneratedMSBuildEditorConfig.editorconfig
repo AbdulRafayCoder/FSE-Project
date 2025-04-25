@@ -9,93 +9,101 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BlazorApp
 build_property.RootNamespace = BlazorApp
-build_property.ProjectDir = C:\Users\rafwa\Desktop\fse-Assingment\BlazorApp\
+build_property.ProjectDir = C:\Users\madha\source\repos\FSE-Project\BlazorApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\rafwa\Desktop\fse-Assingment\BlazorApp
+build_property.MSBuildProjectDirectory = C:\Users\madha\source\repos\FSE-Project\BlazorApp
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/App.razor]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/Pages/Catalog-admin.razor]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/Catalog-AddBook.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0YWxvZy1BZGRCb29rLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/Catalog-admin.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0YWxvZy1hZG1pbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/Pages/Catalog-bookmanagement.razor]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/Catalog-bookmanagement.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0YWxvZy1ib29rbWFuYWdlbWVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/Pages/Catalog-student.razor]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/Catalog-student.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0YWxvZy1zdHVkZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/Pages/Challan-admin.razor]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/Challan-admin.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhbGxhbi1hZG1pbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/Pages/Challan-student.razor]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/Challan-student.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhbGxhbi1zdHVkZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/Pages/Home-admin.razor]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/Home-admin.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS1hZG1pbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/Pages/Home-student.razor]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/Home-student.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS1zdHVkZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/Pages/Index.razor]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/Pages/Login.razor]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/Pages/Requests-admin.razor]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/Requests-admin.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVxdWVzdHMtYWRtaW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/Pages/Requests-student.razor]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/Requests-student.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVxdWVzdHMtc3R1ZGVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/Pages/Review-student.razor]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/Review-student.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV2aWV3LXN0dWRlbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/Pages/Reviews-admin.razor]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/Reviews-admin.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV2aWV3cy1hZG1pbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/Pages/User-student.razor]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/User-student.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlci1zdHVkZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/Pages/Users-admin.razor]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/Users-admin.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnMtYWRtaW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/Shared/MainLayout.razor]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/Users-student.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnMtc3R1ZGVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/_Imports.razor]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/Pages/Error.cshtml]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rafwa/Desktop/fse-Assingment/BlazorApp/Pages/_Host.cshtml]
+[C:/Users/madha/source/repos/FSE-Project/BlazorApp/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

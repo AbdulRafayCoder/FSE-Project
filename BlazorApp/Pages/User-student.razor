@@ -1,12 +1,7 @@
 @page "/user-student"
-@using FSEBACKEND.Models
 @using Microsoft.AspNetCore.Components
-@using System.Net.Http.Json
-@inject HttpClient Http
 @inject NavigationManager NavigationManager
-@inject IJSRuntime JSRuntime
 @inject BlazorApp.Services.UserState UserState
-@inject IJSRuntime JS
 
 <style>
     .main-container {
@@ -161,147 +156,33 @@
         line-height: 1.6;
     }
 
-    .filter-buttons {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-
-    .filter-buttons button {
-        padding: 10px 20px;
-        margin: 0 10px;
-        font-size: 1em;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.2s ease, transform 0.2s ease;
-        width: 120px; /* Ensures all buttons are the same size */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    }
-
-    .filter-buttons button.pending {
-        background: linear-gradient(135deg, #ffc107, #e0a800);
-        color: white;
-    }
-
-    .filter-buttons button.pending:hover {
-        transform: scale(1.05);
-    }
-
-    .filter-buttons button.accepted {
-        background: linear-gradient(135deg, #28a745, #218838);
-        color: white;
-    }
-
-    .filter-buttons button.accepted:hover {
-        transform: scale(1.05);
-    }
-
-    ..requests-container {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 20px;
-    overflow-x: auto;  /* Horizontal scroll enabled */
-    overflow-y: hidden;
-    padding: 10px;
-    height: auto;
-    margin-bottom: 20px;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-
-    .request-card {
-        flex: 0 0 300px;
-        flex: 1 1 calc(25% - 20px); /* Match catalog card width */
+    .profile-card {
         background-color: white;
         border: 1px solid #ddd;
         border-radius: 8px;
-        padding: 25px; /* Match catalog card padding */
+        padding: 30px;
+        max-width: 400px;
+        margin: 40px auto;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        animation: fadeIn 0.5s ease-in-out;
-        max-height: 300px; /* Limit the maximum height of the card */
-        overflow: hidden; /* Hide overflow content */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; /* Ensure button is near the bottom */
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
     }
 
-    .request-card:hover {
-        transform: scale(1.03); /* Match catalog card hover effect */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .request-card h3 {
-        font-size: 1.5em; /* Match catalog card title size */
+    .profile-card h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
         color: #333;
-        margin-bottom: 10px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
-    .request-card p {
-        font-size: 1em; /* Match catalog card text size */
+    .profile-card p {
+        font-size: 1.1em;
         color: #555;
-        margin-bottom: 10px;
-        text-shadow: none; /* Remove shadows from paragraph text */
-    }
-
-    .request-card button {
-        width: 100%; /* Stretch button to match card width */
-        padding: 10px;
-        font-size: 1em;
-        border: none;
-        border-radius: 5px;
-        background-color: #28a745; /* Standardize to green */
-        color: white;
-        cursor: pointer;
-        transition: transform 0.2s ease, background-color 0.2s ease;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        margin-top: auto; /* Push the button to the bottom */
-    }
-
-    .request-card button:hover {
-        transform: scale(1.05);
-        background-color: #218838; /* Darker green on hover */
-    }
-
-    .request-card button.pending-display {
-        width: 100%; /* Stretch button to match card width */
-        padding: 10px;
-        font-size: 1em;
-        border: none;
-        border-radius: 5px;
-        background-color: #ffc107; /* Yellow color for pending */
-        color: white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    }
-
-    .request-card button.return-display {
-        width: 100%; /* Stretch button to match card width */
-        padding: 10px;
-        font-size: 1em;
-        border: none;
-        border-radius: 5px;
-        background-color: red; /* Yellow color for pending */
-        color: white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    }
-
-    .request-card button.pending-display:hover {
-        transform: scale(1.05);
-        background-color: #e0a800; /* Darker yellow on hover */
+        margin-bottom: 8px;
+        text-shadow: none;
     }
 </style>
 
 <div class="main-container">
-    <!-- Top Bar -->
     <div class="top-bar">
         <div class="logo-container">
             <img src="images/logo.png" alt="Top Logo" />
@@ -310,9 +191,7 @@
         <span>Logged in as: Student</span>
     </div>
 
-    <!-- Page Container -->
     <div class="page_container">
-        <!-- Sidebar -->
         <div class="sidebar">
             <div>
                 <a href="/home-student">
@@ -320,7 +199,7 @@
                 </a>
                 <a href="/catalog-student">Catalog</a>
                 <a href="/requests-student">Requests</a>
-                <a href="/user-student">User</a> 
+                <a class="active" href="/user-student">User</a>
                 <a href="/challan-student">Challan</a>
                 <a href="/student-review">Reviews</a>
             </div>
@@ -329,18 +208,24 @@
             </div>
         </div>
 
-        <!-- Content Area -->
         <div class="content-area">
+            <div class="hero">
+                <h1>User Profile</h1>
+                <p>View your account details below.</p>
+            </div>
+            <div class="profile-card">
+                <h2>@UserState.Email</h2>
+                <p><strong>Role:</strong> Student</p>
+                <!-- Add more user info here if available -->
+            </div>
         </div>
     </div>
 </div>
 
 @code {
-    
     private void Logout()
     {
         UserState.ClearUser();
         NavigationManager.NavigateTo("/login");
     }
-
 }

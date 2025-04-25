@@ -175,7 +175,7 @@
         border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.2s ease, transform 0.2s ease;
-        width: 120px; /* Ensures all buttons are the same size */
+        width: 120px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
@@ -198,97 +198,94 @@
         transform: scale(1.05);
     }
 
-    ..requests-container {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 20px;
-    overflow-x: auto;  /* Horizontal scroll enabled */
-    overflow-y: hidden;
-    padding: 10px;
-    height: auto;
-    margin-bottom: 20px;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
+    .requests-container {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 10px;
+        height: calc(100% - 140px);
+        margin-bottom: 20px;
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
 
     .request-card {
-        flex: 0 0 300px;
-        flex: 1 1 calc(25% - 20px); /* Match catalog card width */
+        flex: 1 1 calc(25% - 20px);
         background-color: white;
         border: 1px solid #ddd;
         border-radius: 8px;
-        padding: 25px; /* Match catalog card padding */
+        padding: 25px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
         animation: fadeIn 0.5s ease-in-out;
-        max-height: 300px; /* Limit the maximum height of the card */
-        overflow: hidden; /* Hide overflow content */
+        max-height: 300px;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
-        justify-content: space-between; /* Ensure button is near the bottom */
+        justify-content: space-between;
     }
 
     .request-card:hover {
-        transform: scale(1.03); /* Match catalog card hover effect */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transform: scale(1.03);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     .request-card h3 {
-        font-size: 1.5em; /* Match catalog card title size */
+        font-size: 1.5em;
         color: #333;
         margin-bottom: 10px;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
     .request-card p {
-        font-size: 1em; /* Match catalog card text size */
+        font-size: 1em;
         color: #555;
         margin-bottom: 10px;
-        text-shadow: none; /* Remove shadows from paragraph text */
+        text-shadow: none;
     }
 
     .request-card button {
-        width: 100%; /* Stretch button to match card width */
+        width: 100%;
         padding: 10px;
         font-size: 1em;
         border: none;
         border-radius: 5px;
-        background-color: #28a745; /* Standardize to green */
+        background-color: #28a745;
         color: white;
         cursor: pointer;
         transition: transform 0.2s ease, background-color 0.2s ease;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        margin-top: auto; /* Push the button to the bottom */
+        margin-top: auto;
     }
 
     .request-card button:hover {
         transform: scale(1.05);
-        background-color: #218838; /* Darker green on hover */
+        background-color: #218838;
     }
 
     .request-card button.pending-display {
-        width: 100%; /* Stretch button to match card width */
+        width: 100%;
         padding: 10px;
         font-size: 1em;
         border: none;
         border-radius: 5px;
-        background-color: #ffc107; /* Yellow color for pending */
+        background-color: #ffc107;
         color: white;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
     .request-card button.return-display {
-        width: 100%; /* Stretch button to match card width */
+        width: 100%;
         padding: 10px;
         font-size: 1em;
         border: none;
         border-radius: 5px;
-        background-color: red; /* Yellow color for pending */
+        background-color: red;
         color: white;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -296,12 +293,11 @@
 
     .request-card button.pending-display:hover {
         transform: scale(1.05);
-        background-color: #e0a800; /* Darker yellow on hover */
+        background-color: #e0a800;
     }
 </style>
 
 <div class="main-container">
-    <!-- Top Bar -->
     <div class="top-bar">
         <div class="logo-container">
             <img src="images/logo.png" alt="Top Logo" />
@@ -310,17 +306,15 @@
         <span>Logged in as: Student</span>
     </div>
 
-    <!-- Page Container -->
     <div class="page_container">
-        <!-- Sidebar -->
         <div class="sidebar">
             <div>
                 <a href="/home-student">
                     <img src="images/logo.png" alt="Logo" />
                 </a>
                 <a href="/catalog-student">Catalog</a>
-                <a href="/requests-student">Requests</a>
-                <a href="/user-student">User</a> 
+                <a class="active" href="/requests-student">Requests</a>
+                <a href="/user-student">User</a>
                 <a href="/challan-student">Challan</a>
                 <a href="/student-review">Reviews</a>
             </div>
@@ -329,37 +323,32 @@
             </div>
         </div>
 
-        <!-- Content Area -->
         <div class="content-area">
-            <!-- Hero Section -->
             <div class="hero">
                 <h1>Borrowing Requests</h1>
-                <p>Review all incoming book borrowing requests.</p>
+                <p>Review all book borrowing requests.</p>
             </div>
 
-            <!-- Filter Buttons -->
             <div class="filter-buttons">
                 <button class="pending" @onclick="ShowPendingRequests">Pending</button>
                 <button class="accepted" @onclick="ShowAcceptedRequests">Accepted</button>
             </div>
 
-            <!-- Requests Container -->
             <div class="requests-container">
                 @if (filteredRequests != null && filteredRequests.Any())
                 {
                     @foreach (var req in filteredRequests)
                     {
-                        @if(!req.Accepted){
-
-                        }
                         <div class="request-card">
-                            <h3>Book: @req.BookName</h3> <!-- Display BookName instead of BookId -->
-                            <p><strong>User:</strong> @req.UserEmail</p> <!-- Fixed to display UserEmail -->
+                            <h3>Book: @req.BookName</h3>
+                            <p><strong>User:</strong> @req.UserEmail</p>
                             <p><strong>Status:</strong> @(req.Accepted ? "Accepted" : "Pending")</p>
                             @if (!req.Accepted)
                             {
-                                <button class="pending-display">Pending</button> <!-- Updated button -->
-                            }else{
+                                <button class="pending-display" disabled>Pending</button>
+                            }
+                            else
+                            {
                                 <button class="return-display" @onclick="() => ReturnBook(req.requestId)">Return</button>
                             }
                         </div>
@@ -381,7 +370,7 @@
     protected override async Task OnInitializedAsync()
     {
         await LoadRequests();
-        ShowPendingRequests(); // Show only pending requests by default
+        ShowPendingRequests();
     }
 
     private async Task LoadRequests()
@@ -404,24 +393,24 @@
     {
         public int requestId { get; set; }
         public int BookId { get; set; }
-        public string BookName { get; set; } = string.Empty; // Added BookName property
-        public string UserEmail { get; set; } = string.Empty; // Ensure UserEmail is used
+        public string BookName { get; set; } = string.Empty;
+        public string UserEmail { get; set; } = string.Empty;
         public bool Accepted { get; set; }
     }
 
     private async Task ReturnBook(int requestId)
-{
-    var response = await Http.PutAsJsonAsync($"http://localhost:5000/lend/return/{requestId}", (object)null);
+    {
+        var response = await Http.PutAsJsonAsync($"http://localhost:5000/lend/return/{requestId}", (object)null);
 
-    if (response.IsSuccessStatusCode)
-    {
-        await JS.InvokeVoidAsync("alert", "Book has been returned successfully!");
+        if (response.IsSuccessStatusCode)
+        {
+            await JS.InvokeVoidAsync("alert", "Book has been returned successfully!");
+        }
+        else
+        {
+            await JS.InvokeVoidAsync("alert", "Failed to return the book.");
+        }
     }
-    else
-    {
-        await JS.InvokeVoidAsync("alert", "Failed to return the book.");
-    }
-}
 
     private void Logout()
     {
