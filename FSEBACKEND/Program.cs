@@ -1,6 +1,7 @@
 using FSEBACKEND.Data;
 using FSEBACKEND.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Text.RegularExpressions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,21 @@ if (app.Environment.IsDevelopment())
 
 app.MapPost("/login", async (LoginRequest login, ApplicationDbContext db) =>
 {
+    if (string.IsNullOrWhiteSpace(login.Email) || string.IsNullOrWhiteSpace(login.Password))
+    {
+        return Results.BadRequest("Email and password are required.");
+    }
+
+    if (!Regex.IsMatch(login.Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+    {
+        return Results.BadRequest("Invalid email format.");
+    }
+
+    if (login.Password.Length < 8 || !login.Password.Any(char.IsDigit))
+    {
+        return Results.BadRequest("Password must be at least 8 characters long and contain at least one numeral.");
+    }
+
     var user = await db.Users.SingleOrDefaultAsync(u => u.Email == login.Email && u.Password == login.Password);
     if (user != null)
     {
@@ -29,11 +45,22 @@ app.MapPost("/login", async (LoginRequest login, ApplicationDbContext db) =>
     }
 });
 
+
 app.MapPost("/adduser", async (AddUserRequest newUser, ApplicationDbContext db) =>
 {
     if (string.IsNullOrWhiteSpace(newUser.Email) || string.IsNullOrWhiteSpace(newUser.Password))
     {
         return Results.BadRequest("Email and password are required.");
+    }
+
+    if (!Regex.IsMatch(newUser.Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+    {
+        return Results.BadRequest("Invalid email format.");
+    }
+
+    if (newUser.Password.Length < 8 || !newUser.Password.Any(char.IsDigit))
+    {
+        return Results.BadRequest("Password must be at least 8 characters long and contain at least one numeral.");
     }
 
     var user = new User(newUser.Email, newUser.Password, "student");
