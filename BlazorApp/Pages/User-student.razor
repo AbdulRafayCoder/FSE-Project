@@ -1,7 +1,9 @@
 @page "/user-student"
 @using Microsoft.AspNetCore.Components
+@using System.Net.Http.Json
 @inject NavigationManager NavigationManager
 @inject BlazorApp.Services.UserState UserState
+@inject HttpClient Http
 
 <style>
     .main-container {
@@ -156,25 +158,44 @@
         line-height: 1.6;
     }
 
-    .profile-card {
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Three columns */
+        gap: 20px; /* Space between boxes */
+        padding: 10px;
+        margin-bottom: 20px;
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-box {
         background-color: white;
         border: 1px solid #ddd;
         border-radius: 8px;
-        padding: 30px;
-        max-width: 400px;
-        margin: 40px auto;
+        padding: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         text-align: center;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
     }
 
-    .profile-card h2 {
-        font-size: 2em;
+    .profile-box.large {
+        grid-column: span 3; /* Full width */
+    }
+
+    .profile-box.medium {
+        grid-column: span 2; /* Two columns wide */
+    }
+
+    .profile-box.small {
+        grid-column: span 1; /* One column wide */
+    }
+
+    .profile-box h2 {
+        font-size: 1.8em;
         margin-bottom: 10px;
         color: #333;
     }
 
-    .profile-card p {
+    .profile-box p {
         font-size: 1.1em;
         color: #555;
         margin-bottom: 8px;
@@ -210,22 +231,89 @@
 
         <div class="content-area">
             <div class="hero">
-                <h1>User Profile</h1>
+                <h1>Student Dashboard - User Profile</h1>
                 <p>View your account details below.</p>
             </div>
-            <div class="profile-card">
-                <h2>@UserState.Email</h2>
-                <p><strong>Role:</strong> Student</p>
-                <!-- Add more user info here if available -->
+
+            <div class="card-container">
+                <div class="profile-box large">
+                    <h2>@UserState.Email</h2>
+                    <p><strong>Role:</strong> Student</p>
+                </div>
+                <div class="profile-box small">
+                    <p><strong>Books Borrowed:</strong> @BooksBorrowed</p>
+                </div>
+                <div class="profile-box small">
+                    <p><strong>Books Returned:</strong> @BooksReturned</p>
+                </div>
+                <div class="profile-box small">
+                    <p><strong>Books Overdue:</strong> @BooksOverdue</p>
+                </div>
+                <div class="profile-box small">
+                    <p><strong>Challans Issued:</strong> @ChallansIssued</p>
+                </div>
+                <div class="profile-box medium">
+                    <p><strong>Pending Requests:</strong> @PendingRequests</p>
+                </div>
+                <div class="profile-box medium">
+                    <p><strong>Pending Reviews:</strong> @PendingReviews</p>
+                </div>
+                <div class="profile-box small">
+                    <p><strong>Reviews Made:</strong> @ReviewsMade</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 @code {
+    private int BooksBorrowed = 0;
+    private int BooksReturned = 0;
+    private int PendingRequests = 0;
+    private int PendingReviews = 0;
+    private int ReviewsMade = 0;
+    private int BooksOverdue = 0;
+    private int ChallansIssued = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var userEmail = UserState.Email;
+
+            // Fetch user statistics from the backend
+            var stats = await Http.GetFromJsonAsync<UserStats>($"http://localhost:5000/user/stats/{userEmail}");
+            if (stats != null)
+            {
+                BooksBorrowed = stats.BooksBorrowed;
+                BooksReturned = stats.BooksReturned;
+                PendingRequests = stats.PendingRequests;
+                PendingReviews = stats.PendingReviews;
+                ReviewsMade = stats.ReviewsMade;
+                BooksOverdue = stats.BooksOverdue;
+                ChallansIssued = stats.ChallansIssued;
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching user stats: {ex.Message}");
+        }
+    }
+
     private void Logout()
     {
         UserState.ClearUser();
         NavigationManager.NavigateTo("/login");
+    }
+
+    private class UserStats
+    {
+        public int BooksBorrowed { get; set; }
+        public int BooksReturned { get; set; }
+        public int PendingRequests { get; set; }
+        public int PendingReviews { get; set; }
+        public int ReviewsMade { get; set; }
+        public int BooksOverdue { get; set; }
+        public int ChallansIssued { get; set; }
     }
 }

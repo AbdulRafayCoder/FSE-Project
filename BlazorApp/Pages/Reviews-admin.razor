@@ -165,102 +165,49 @@
     /* Feature Cards */
     .features {
         display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
+        flex-direction: column; /* Stack cards vertically */
+        gap: 15px; /* Add consistent spacing between cards */
         margin-top: 20px;
     }
 
+    .card-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Add consistent spacing between cards */
+        overflow-y: auto; /* Allow vertical scrolling */
+        overflow-x: hidden;
+        padding: 10px;
+        margin-bottom: 20px;
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle inner shadow for distinction */
+    }
+
     .feature-card {
-        flex: 1 1 calc(33.333% - 20px);
+        width: 100%; /* Full width of the container */
+        min-height: 160px; /* Ensure a consistent minimum height */
         background-color: white;
         border: 1px solid #ddd;
         border-radius: 8px;
-        padding: 15px;
+        padding: 20px; /* Add padding for content */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        display: flex;
+        flex-direction: column; /* Align content vertically */
+        justify-content: center; /* Center content vertically */
         animation: fadeIn 0.5s ease-in-out;
-    }
-
-    .feature-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     .feature-card h3 {
         font-size: 1.5em;
         color: #333;
         margin-bottom: 10px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        margin-top: 10px;
     }
 
     .feature-card p {
         font-size: 1em;
         color: #555;
-        text-shadow: none; /* Remove shadows from paragraph text */
+        margin: 5px 0;
     }
-
-    .feature-card button {
-        padding: 10px 20px;
-        font-size: 1em;
-        border: none;
-        border-radius: 5px;
-        background-color: #007bff;
-        color: white;
-        cursor: pointer;
-        transition: transform 0.2s ease, background-color 0.2s ease;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    }
-
-    .feature-card button:hover {
-        transform: scale(1.05);
-        background-color: #0056b3;
-    }
-    .features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: flex-start; /* Align items horizontally */
-    margin-top: 20px;
-}
-
-.feature-card {
-    flex: 1 1 calc(100% - 20px); /* Make it take full width of its container */
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    max-height: 120px; /* Limit the height of each card */
-    display: flex;
-    flex-direction: row; /* Ensure the content aligns horizontally */
-    justify-content: space-between;
-}
-
-.feature-card h3 {
-    font-size: 1.2em; /* Adjust the font size */
-    color: #333;
-    margin-bottom: 10px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.feature-card p {
-    font-size: 0.9em; /* Adjust the font size for paragraphs */
-    color: #555;
-    text-shadow: none; /* Remove shadows from paragraph text */
-}
-
-/* Optional: Adjust the text content inside the card to make sure it's aligned correctly */
-.feature-card div {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 </style>
 
 <div class="main-container">
@@ -299,7 +246,7 @@
                 <p>View and moderate all user reviews.</p>
             </div>
 
-            <div class="features" style="flex-direction: column; gap: 10px;">
+            <div class="card-container">
                 @if (IsLoading)
                 {
                     <p>Loading reviews...</p>
@@ -312,13 +259,11 @@
                 {
                     @foreach (var review in Reviews)
                     {
-                        <div class="feature-card" style="display: flex; justify-content: space-between; align-items: center;">
-                            <div>
-                                <h3>@review.bookName</h3>
-                                <p><strong>User:</strong> @review.writerName</p>
-                                <p><strong>Rating:</strong> @review.rating/5</p>
-                                <p><strong>Comment:</strong> @review.comment</p>
-                            </div>
+                        <div class="feature-card">
+                            <h3>@review.bookName</h3>
+                            <p><strong>User:</strong> @review.writerName</p>
+                            <p><strong>Rating:</strong> @review.rating/5</p>
+                            <p><strong>Comment:</strong> @review.comment</p>
                         </div>
                     }
                 }

@@ -199,56 +199,42 @@
         transform: scale(1.05);
     }
 
-    ..requests-container {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 20px;
-    overflow-x: auto;  /* Horizontal scroll enabled */
-    overflow-y: hidden;
-    padding: 10px;
-    height: auto;
-    margin-bottom: 20px;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
+    .card-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Add consistent spacing between cards */
+        overflow-y: auto; /* Allow vertical scrolling */
+        overflow-x: hidden;
+        padding: 10px;
+        margin-bottom: 20px;
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle inner shadow for distinction */
+    }
 
     .request-card {
-        flex: 0 0 300px;
-        flex: 1 1 calc(25% - 20px); /* Match catalog card width */
+        width: 100%; /* Full width of the container */
+        min-height: 140px; /* Ensure a consistent minimum height */
         background-color: white;
         border: 1px solid #ddd;
         border-radius: 8px;
-        padding: 25px; /* Match catalog card padding */
+        padding: 20px; /* Add padding for content */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        animation: fadeIn 0.5s ease-in-out;
-        max-height: 300px; /* Limit the maximum height of the card */
-        overflow: hidden; /* Hide overflow content */
         display: flex;
-        flex-direction: column;
-        justify-content: space-between; /* Ensure button is near the bottom */
-    }
-
-    .request-card:hover {
-        transform: scale(1.03); /* Match catalog card hover effect */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        flex-direction: column; /* Align content vertically */
+        justify-content: center; /* Center content vertically */
+        animation: fadeIn 0.5s ease-in-out;
     }
 
     .request-card h3 {
-        font-size: 1.5em; /* Match catalog card title size */
+        font-size: 1.5em;
         color: #333;
         margin-bottom: 10px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
     .request-card p {
-        font-size: 1em; /* Match catalog card text size */
+        font-size: 1em;
         color: #555;
-        margin-bottom: 10px;
-        text-shadow: none; /* Remove shadows from paragraph text */
+        margin: 5px 0;
     }
 
     .request-card button {
@@ -263,7 +249,7 @@
         transition: transform 0.2s ease, background-color 0.2s ease;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        margin-top: auto; /* Push the button to the bottom */
+        margin-top: 10px;
     }
 
     .request-card button:hover {
@@ -272,32 +258,17 @@
     }
 
     .request-card button.pending-display {
-        width: 100%; /* Stretch button to match card width */
-        padding: 10px;
-        font-size: 1em;
-        border: none;
-        border-radius: 5px;
         background-color: #ffc107; /* Yellow color for pending */
         color: white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    }
-
-    .request-card button.return-display {
-        width: 100%; /* Stretch button to match card width */
-        padding: 10px;
-        font-size: 1em;
-        border: none;
-        border-radius: 5px;
-        background-color: red; /* Yellow color for pending */
-        color: white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
     .request-card button.pending-display:hover {
-        transform: scale(1.05);
         background-color: #e0a800; /* Darker yellow on hover */
+    }
+
+    .request-card button.return-display {
+        background-color: red; /* Red color for return */
+        color: white;
     }
 </style>
 
@@ -332,56 +303,59 @@
 
         <!-- Content Area -->
         <div class="content-area">
-        <div class="requests-container">
-    @if (isLoading)
-    {
-        <p>Loading challans...</p>
-    }
-    else if (challans == null || !challans.Any())
-    {
-        <p>No challans issued yet.</p>
-    }
-    else
-    {
-        @foreach (var challan in challans)
-        {
-            <div class="request-card">
-                <h3>Challan #@challan.ChallanId</h3>
-                <p><strong>Amount:</strong> ₹@challan.Amount</p>
-                <p><strong>Issued On:</strong> @challan.IssuedDate.ToString("dd MMM yyyy")</p>
-                <p><strong>Status:</strong> 
-                    @(challan.VerifiedByAdmin 
-                        ? "Verified"
-                        : challan.SubmittedByUser 
-                            ? "Submitted (Pending Admin)" 
-                            : "Pending Submission")
-                </p>
+            <div class="hero">
+                <h1>Student Dashboard - Challans</h1>
+                <p>View and manage your challans for overdue books.</p>
+            </div>
 
-                @if (!challan.SubmittedByUser)
+            <div class="card-container">
+                @if (isLoading)
                 {
-                    <button @onclick="() => SubmitChallan(challan.ChallanId)">Submit</button>
+                    <p>Loading challans...</p>
                 }
-
-                @if (challan.SubmittedByUser)
+                else if (challans == null || !challans.Any())
                 {
-                    @if (challan.VerifiedByAdmin)
+                    <p>No challans issued yet.</p>
+                }
+                else
+                {
+                    @foreach (var challan in challans)
                     {
-                        
-                        <button>Verified</button>
-                    }
-                    else
-                    {
-                        <button class="pending-display" disabled>Pending Approval</button>
+                        <div class="request-card">
+                            <h3>Challan #@challan.ChallanId</h3>
+                            <p><strong>Amount:</strong> ₹@challan.Amount</p>
+                            <p><strong>Issued On:</strong> @challan.IssuedDate.ToString("dd MMM yyyy")</p>
+                            <p><strong>Status:</strong> 
+                                @(challan.VerifiedByAdmin 
+                                    ? "Verified"
+                                    : challan.SubmittedByUser 
+                                        ? "Submitted (Pending Admin)" 
+                                        : "Pending Submission")
+                            </p>
+
+                            @if (!challan.SubmittedByUser)
+                            {
+                                <button @onclick="() => SubmitChallan(challan.ChallanId)">Submit</button>
+                            }
+
+                            @if (challan.SubmittedByUser)
+                            {
+                                @if (challan.VerifiedByAdmin)
+                                {
+                                    <button disabled>Verified</button>
+                                }
+                                else
+                                {
+                                    <button class="pending-display" disabled>Pending Approval</button>
+                                }
+                            }
+                        </div>
                     }
                 }
             </div>
-        }
-    }
-</div>
         </div>
     </div>
 </div>
-
 
 @code {
     private List<ChallanModel> challans = new();
